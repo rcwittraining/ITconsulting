@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RCWIT Consulting | Cloud Migration, Linux &amp; Infrastructure Consulting</title>
+<meta name="description" content="RCWIT Consulting — independent IT consulting for cloud migration, AWS and Azure architecture, Linux/RHEL engineering, endpoint management, virtualisation and incident response.">
+<meta name="theme-color" content="#020a18">
+<meta property="og:title" content="RCWIT Consulting | Cloud, Linux &amp; Infrastructure">
+<meta property="og:description" content="Hands-on IT consulting: cloud migration, AWS/Azure architecture, Linux/RHEL engineering, endpoint management and incident response.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://itconsulting.rcwittraining.in/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23058de7'/%3E%3Ctext x='32' y='43' font-family='Segoe UI,Arial' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#020a18; --bg2:#030f27; --panel:#06142c; --panel2:#071733;
+    --line:rgba(120,165,230,.16); --line2:rgba(120,165,230,.30);
+    --txt:#e8effb; --muted:#9db0cc; --muted2:#7e93b3;
+    --blue:#058de7; --blue2:#0078d4; --deep:#064bb9; --navy:#004182;
+    --radius:16px;
+    --max:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--txt);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(2,10,24,.86); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:18px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.2px;font-size:1.03rem}
+  .mark{
+    width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--blue) 0%,var(--deep) 100%);
+    display:grid;place-items:center;font-weight:800;color:#fff;font-size:.95rem;
+    box-shadow:0 4px 14px rgba(5,141,231,.34);
+  }
+  .brand small{display:block;font-weight:500;font-size:.68rem;color:var(--muted2);letter-spacing:.09em;text-transform:uppercase;line-height:1.2}
+  nav.links{margin-left:auto;display:flex;gap:28px;align-items:center}
+  nav.links a{font-size:.9rem;color:var(--muted);transition:color .18s}
+  nav.links a:hover{color:#fff}
+  .btn{
+    display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.9rem;
+    background:linear-gradient(135deg,var(--blue) 0%,var(--deep) 100%);color:#fff;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 6px 20px rgba(5,141,231,.26);
+    transition:transform .16s, box-shadow .16s;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(5,141,231,.38)}
+  .btn.ghost{background:transparent;border:1px solid var(--line2);box-shadow:none;color:var(--txt)}
+  .btn.ghost:hover{background:rgba(255,255,255,.05);box-shadow:none}
+  .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line2);border-radius:9px;color:var(--txt);padding:7px 11px;font-size:1.1rem;cursor:pointer}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:92px 0 78px}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(760px 420px at 16% 6%, rgba(5,141,231,.20), transparent 62%),
+      radial-gradient(620px 420px at 88% 20%, rgba(6,75,185,.22), transparent 62%),
+      linear-gradient(180deg,#020a18 0%, #030f27 100%);
+  }
+  .grid-bg{
+    position:absolute;inset:0;z-index:0;opacity:.35;
+    background-image:linear-gradient(rgba(120,165,230,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(120,165,230,.06) 1px,transparent 1px);
+    background-size:58px 58px;
+    -webkit-mask-image:radial-gradient(760px 400px at 50% 0%,#000,transparent 78%);
+            mask-image:radial-gradient(760px 400px at 50% 0%,#000,transparent 78%);
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;
+    color:#bfe0ff;background:rgba(5,141,231,.11);border:1px solid rgba(5,141,231,.30);
+    padding:7px 14px;border-radius:999px;font-weight:600;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#2ee08a;box-shadow:0 0 0 3px rgba(46,224,138,.18)}
+  h1{
+    font-size:clamp(2.1rem,5.1vw,3.6rem);line-height:1.1;margin:22px 0 0;letter-spacing:-.025em;font-weight:800;
+  }
+  .grad{background:linear-gradient(100deg,#6fc4ff 0%,#058de7 45%,#5b8cff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:clamp(1rem,1.7vw,1.16rem);color:var(--muted);max-width:660px;margin:20px 0 0}
+  .cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+  .stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+  .stat b{display:block;font-size:1.65rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .stat span{font-size:.8rem;color:var(--muted2)}
+
+  /* ---------- sections ---------- */
+  section{padding:84px 0}
+  .alt{background:linear-gradient(180deg,#030f27 0%,#04122a 100%);border-block:1px solid var(--line)}
+  .eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700}
+  h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin:12px 0 0;letter-spacing:-.02em;font-weight:800;line-height:1.2}
+  .sub{color:var(--muted);max-width:650px;margin:14px 0 0}
+  .head{margin-bottom:46px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(304px,1fr));gap:20px}
+  .card{
+    background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;
+    transition:transform .2s, border-color .2s, box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 16px 40px rgba(0,0,0,.38)}
+  .ico{
+    width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:17px;
+    background:rgba(5,141,231,.12);border:1px solid rgba(5,141,231,.26);
+  }
+  .ico svg{width:22px;height:22px;stroke:#6fc4ff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:0 0 9px;font-size:1.07rem;font-weight:700;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--muted);font-size:.925rem}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .tag{font-size:.715rem;color:#a9c6e8;background:rgba(120,165,230,.09);border:1px solid var(--line);padding:4px 10px;border-radius:7px;white-space:nowrap}
+
+  /* ---------- process ---------- */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:22px;counter-reset:s}
+  .step{position:relative;padding-top:20px;border-top:2px solid rgba(5,141,231,.28);counter-increment:s}
+  .step::before{
+    content:"0" counter(s);font-size:.78rem;font-weight:800;color:var(--blue);letter-spacing:.1em;
+    position:absolute;top:-11px;background:var(--bg);padding-right:11px;
+  }
+  .alt .step::before{background:#030f27}
+  .step h4{margin:4px 0 7px;font-size:1rem;font-weight:700}
+  .step p{margin:0;color:var(--muted);font-size:.9rem}
+
+  /* ---------- stack ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .chip{
+    font-size:.84rem;color:#cbdcf2;background:rgba(120,165,230,.07);
+    border:1px solid var(--line);padding:9px 15px;border-radius:9px;transition:border-color .18s,background .18s;
+  }
+  .chip:hover{border-color:var(--line2);background:rgba(120,165,230,.12)}
+
+  /* ---------- contact ---------- */
+  .panel{
+    background:
+      radial-gradient(640px 280px at 50% 0%, rgba(5,141,231,.17), transparent 68%),
+      linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
+    border:1px solid var(--line2);border-radius:22px;padding:56px 36px;text-align:center;
+  }
+  .panel h2{max-width:620px;margin-inline:auto}
+  .panel .sub{margin-inline:auto;text-align:center}
+  .contact-row{display:flex;gap:13px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+
+  footer{border-top:1px solid var(--line);padding:38px 0;background:#020a18}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot p{margin:0;color:var(--muted2);font-size:.845rem}
+  .foot nav{display:flex;gap:20px;flex-wrap:wrap}
+  .foot nav a{color:var(--muted2);font-size:.845rem;transition:color .18s}
+  .foot nav a:hover{color:#fff}
+  .disclaim{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);color:#60738f;font-size:.775rem;max-width:860px}
+
+  @media (max-width:860px){
+    nav.links{
+      display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;
+      background:#030f27;border-bottom:1px solid var(--line);padding:8px 22px 18px;
+    }
+    nav.links.open{display:flex}
+    nav.links a{padding:12px 0;border-bottom:1px solid var(--line);width:100%}
+    nav.links .btn{margin-top:14px;text-align:center;border-bottom:none}
+    .burger{display:block}
+    .stats{gap:28px}
+    .hero{padding:66px 0 56px}
+    section{padding:62px 0}
+    .panel{padding:40px 22px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="mark">R</span>
+      <span>RCWIT Consulting<small>Cloud &amp; Infrastructure</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="grid-bg"></div>
+    <div class="wrap">
+      <span class="pill"><span class="dot"></span> Available for new engagements</span>
+      <h1>Infrastructure consulting,<br><span class="grad">built by practitioners.</span></h1>
+      <p class="lede">
+        We plan and deliver cloud migrations, Linux and Windows platform engineering, virtualisation
+        and endpoint modernisation — then stay on to make it run reliably. Hands-on engineering,
+        not slide decks.
+      </p>
+      <div class="cta">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn ghost" href="#services">Explore services</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>225+</b><span>Hands-on labs authored</span></div>
+        <div class="stat"><b>AWS · Azure · GCP</b><span>Multi-cloud delivery</span></div>
+        <div class="stat"><b>Linux &amp; Windows</b><span>Full-stack platform depth</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">What we do</span>
+        <h2>Services</h2>
+        <p class="sub">Focused engagements across the infrastructure lifecycle — assess, migrate, harden, operate.</p>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.1 9.4 4.5 4.5 0 0 0 6.5 19z"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg></div>
+          <h3>Cloud Migration &amp; Modernisation</h3>
+          <p>Move workloads off ageing on-prem estates with a tested cutover plan, rollback path and realistic timeline — not a big-bang gamble.</p>
+          <div class="tags"><span class="tag">VMware → AWS</span><span class="tag">VMware → Azure</span><span class="tag">Hyper-V</span><span class="tag">Veeam</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <h3>Cloud Architecture &amp; Governance</h3>
+          <p>Landing zones, account structure, network segmentation and guardrails designed so the platform stays controllable as teams scale onto it.</p>
+          <div class="tags"><span class="tag">Control Tower</span><span class="tag">VPC Endpoints</span><span class="tag">CloudWatch</span><span class="tag">EventBridge</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 19h20"/><path d="m8 9 2.5 2.5L8 14"/><path d="M12.5 14H16"/></svg></div>
+          <h3>Linux &amp; RHEL Engineering</h3>
+          <p>Build, hardening and automation for enterprise Linux estates — standardised images, patch strategy and sane configuration management.</p>
+          <div class="tags"><span class="tag">RHEL 10</span><span class="tag">Hardening</span><span class="tag">Automation</span><span class="tag">Troubleshooting</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+          <h3>Endpoint &amp; Virtual Workspace</h3>
+          <p>Modern device management and virtual desktops that users don't fight — enrolment, compliance, app delivery and profile strategy.</p>
+          <div class="tags"><span class="tag">Intune</span><span class="tag">Azure Virtual Desktop</span><span class="tag">Citrix</span><span class="tag">AWS WorkSpaces</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+          <h3>Storage, Backup &amp; DR</h3>
+          <p>Capacity and resilience planning with restores that are actually tested — because an untested backup is just an expensive assumption.</p>
+          <div class="tags"><span class="tag">TrueNAS Scale</span><span class="tag">Backup design</span><span class="tag">DR runbooks</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+          <h3>Incident Response &amp; Reliability</h3>
+          <p>Get to root cause on production outages, then close the loop with monitoring, alerting and runbooks so the same failure can't repeat quietly.</p>
+          <div class="tags"><span class="tag">RCA</span><span class="tag">Observability</span><span class="tag">Runbooks</span><span class="tag">On-call design</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="alt" id="approach">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How we work</span>
+        <h2>A deliberate, low-drama approach</h2>
+        <p class="sub">Every engagement is scoped so you know what is changing, when, and how we back out if it misbehaves.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h4>Assess</h4>
+          <p>Inventory the estate, map dependencies and surface the risks that usually derail migrations late.</p>
+        </div>
+        <div class="step">
+          <h4>Design</h4>
+          <p>A target architecture sized to your actual workload and budget, with the trade-offs written down.</p>
+        </div>
+        <div class="step">
+          <h4>Deliver</h4>
+          <p>Pilot first, then phased cutover with validation gates and a rehearsed rollback at every step.</p>
+        </div>
+        <div class="step">
+          <h4>Hand over</h4>
+          <p>Documentation, runbooks and team enablement so your people can operate it without us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Technology</span>
+        <h2>Platforms we work in daily</h2>
+        <p class="sub">Depth across the stack — from hypervisor and storage up to cloud control planes and endpoints.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">Amazon Web Services</span><span class="chip">Microsoft Azure</span><span class="chip">Google Cloud</span>
+        <span class="chip">VMware vSphere</span><span class="chip">Hyper-V</span><span class="chip">Veeam</span>
+        <span class="chip">RHEL / Rocky</span><span class="chip">Ubuntu</span><span class="chip">Windows Server</span>
+        <span class="chip">Microsoft Intune</span><span class="chip">Azure Virtual Desktop</span><span class="chip">Citrix</span>
+        <span class="chip">TrueNAS Scale</span><span class="chip">Docker</span><span class="chip">Cisco Networking</span>
+        <span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">On-prem LLM Ops</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="alt" id="about">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Who we are</span>
+        <h2>Engineers who teach what they ship</h2>
+        <p class="sub">
+          RCWIT Consulting is the consulting practice behind
+          <a href="https://www.rcwittraining.in/" style="color:#6fc4ff;border-bottom:1px solid rgba(111,196,255,.35)">RCW IT Training</a>,
+          an independent platform with 225+ free hands-on labs covering Linux, cloud, networking and
+          endpoint management. The same people who build those labs do the client work — which means
+          recommendations come from systems we have actually broken and rebuilt, repeatedly, on purpose.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Practitioner-led</h3>
+          <p>You work directly with the engineer doing the implementation. No layer of account managers translating the detail.</p>
+        </div>
+        <div class="card">
+          <h3>Vendor-neutral</h3>
+          <p>No resale margins or partner quotas steering the design. The right answer is sometimes "keep what you have".</p>
+        </div>
+        <div class="card">
+          <h3>Knowledge transfer by default</h3>
+          <p>Documentation and enablement are part of delivery, not an upsell. The goal is that you stop needing us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="panel">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Have a migration, outage or platform problem?</h2>
+        <p class="sub">Tell us what you're dealing with and we'll tell you honestly whether we're the right fit — and roughly what it should take.</p>
+        <div class="contact-row">
+          <a class="btn" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn ghost" href="https://www.rcwittraining.in/" target="_blank" rel="noopener">Visit RCW IT Training</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <p>© <span id="yr">2026</span> RCWIT Consulting — part of RCW IT Training.</p>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="https://www.rcwittraining.in/" target="_blank" rel="noopener">Training Platform</a>
+        <a href="https://www.youtube.com/@RajuRishiDev" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+    </div>
+    <p class="disclaim">
+      RCWIT Consulting is an independent IT consulting practice. All product names, logos and brands are the
+      property of their respective owners and are used for identification purposes only. Their use does not
+      imply affiliation with, sponsorship by, or endorsement from the vendor.
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var b = document.getElementById('burger'), m = document.getElementById('menu');
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  m.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') { m.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+  });
+</script>
+</body>
+</html>
