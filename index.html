@@ -10,6 +10,8 @@
 <meta property="og:description" content="Assessments, migrations and platform engineering delivered by practising engineers. Fixed-scope, documented, handed over.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://itconsulting.rcwittraining.in/">
+<meta property="og:image" content="https://itconsulting.rcwittraining.in/assets/hero-network.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://itconsulting.rcwittraining.in/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a1628'/%3E%3Cpath d='M18 46V18h13.5c5.8 0 9.5 3.3 9.5 8.4 0 3.9-2.2 6.8-5.9 7.9L46 46h-7.6l-9.3-11h-3.4v11z' fill='%232c8ef0'/%3E%3C/svg%3E">
 <style>
@@ -18,9 +20,9 @@
     --blue:#1a6fc4; --blue-d:#12528f; --blue-l:#2c8ef0; --blue-pale:#eaf3fc;
     --txt:#16202e; --muted:#51637c; --muted2:#71839b;
     --line:#dfe6ef; --line2:#eef2f7;
-    --bg:#ffffff; --bg2:#f7f9fc; --bg3:#eef3f9;
+    --bg:#fff; --bg2:#f7f9fc;
     --ok:#1f9254;
-    --max:1180px; --r:10px;
+    --max:1180px;
     --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
@@ -29,6 +31,7 @@
   a{color:inherit;text-decoration:none}
   h1,h2,h3,h4{letter-spacing:-.021em;line-height:1.22;margin:0;font-weight:700}
   p{margin:0}
+  img{max-width:100%;display:block}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
   .eyebrow{font-size:.735rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
   .lead{color:var(--muted);font-size:1.045rem}
@@ -40,14 +43,14 @@
   .s-head h2{font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0}
   .s-head p{margin-top:15px}
 
-  /* ---------- utility bar ---------- */
+  /* utility bar */
   .util{background:var(--ink);color:#9fb4ce;font-size:.785rem;border-bottom:1px solid rgba(255,255,255,.07)}
   .util .wrap{display:flex;align-items:center;gap:18px;height:38px}
   .util a{color:#cfe0f3;border-bottom:1px solid rgba(207,224,243,.3)}
   .util a:hover{color:#fff}
   .util .sep{margin-left:auto}
 
-  /* ---------- header ---------- */
+  /* header */
   header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;gap:16px;height:74px}
   .brand{display:flex;align-items:center;gap:12px}
@@ -58,98 +61,118 @@
   nav.links{margin-left:auto;display:flex;align-items:center;gap:30px}
   nav.links a{font-size:.905rem;font-weight:550;color:var(--muted);transition:color .16s}
   nav.links a:hover{color:var(--ink)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 22px;border-radius:8px;font-size:.905rem;font-weight:650;border:1px solid transparent;transition:background .16s,color .16s,border-color .16s,transform .16s;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 22px;border-radius:8px;font-size:.905rem;font-weight:650;border:1px solid transparent;transition:background .16s,color .16s,border-color .16s;cursor:pointer}
   .btn-p{background:var(--blue);color:#fff;border-color:var(--blue)}
   .btn-p:hover{background:var(--blue-d);border-color:var(--blue-d)}
   .btn-o{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-o:hover{border-color:var(--muted2);background:var(--bg2)}
   .btn-w{background:#fff;color:var(--ink);border-color:#fff}
   .btn-w:hover{background:#e9f1fa}
-  .btn-gh{background:transparent;color:#fff;border-color:rgba(255,255,255,.34)}
-  .btn-gh:hover{background:rgba(255,255,255,.1)}
+  .btn-gh{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.34)}
+  .btn-gh:hover{background:rgba(255,255,255,.16)}
   .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer;color:var(--ink)}
   .burger svg{width:19px;height:19px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
 
-  /* ---------- hero ---------- */
-  .hero{background:linear-gradient(165deg,#0a1628 0%,#0f2240 52%,#14304f 100%);color:#fff;position:relative;overflow:hidden;padding:94px 0 0}
-  .hero::after{content:"";position:absolute;inset:0;opacity:.5;
-    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:64px 64px;
-    -webkit-mask-image:radial-gradient(900px 460px at 78% 10%,#000,transparent 72%);mask-image:radial-gradient(900px 460px at 78% 10%,#000,transparent 72%)}
+  /* ---------- hero with imagery ---------- */
+  .hero{
+    position:relative;color:#fff;padding:96px 0 0;overflow:hidden;background:var(--ink);
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 50%}
+  .hero-veil{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(97deg,#0a1628 0%,rgba(10,22,40,.985) 30%,rgba(11,25,45,.90) 48%,rgba(13,31,56,.62) 68%,rgba(16,38,66,.34) 100%);
+  }
+  .hero-veil2{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,transparent 22%,transparent 72%,rgba(10,22,40,.92) 100%)}
   .hero .wrap{position:relative;z-index:2}
-  .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:66px;align-items:center;padding-bottom:88px}
-  .tagline{display:inline-flex;align-items:center;gap:9px;font-size:.755rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase;color:#a9ccf2;background:rgba(44,142,240,.13);border:1px solid rgba(44,142,240,.3);padding:7px 15px;border-radius:5px}
-  .hero h1{font-size:clamp(2.05rem,4.4vw,3.2rem);margin:26px 0 0;font-weight:760;letter-spacing:-.031em}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-bottom:92px}
+  .tagline{display:inline-flex;align-items:center;gap:9px;font-size:.755rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase;color:#a9ccf2;background:rgba(44,142,240,.15);border:1px solid rgba(44,142,240,.34);padding:7px 15px;border-radius:5px}
+  .hero h1{font-size:clamp(2.05rem,4.4vw,3.2rem);margin:26px 0 0;font-weight:760;letter-spacing:-.031em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
   .hero h1 em{font-style:normal;color:#64b2f8}
-  .hero p.sub{font-size:clamp(1rem,1.5vw,1.125rem);color:#b6c9e0;margin-top:22px;max-width:580px}
+  .hero p.sub{font-size:clamp(1rem,1.5vw,1.125rem);color:#c0d2e7;margin-top:22px;max-width:570px}
   .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:36px}
-  .assure{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;font-size:.855rem;color:#9fb6d2}
+  .assure{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;font-size:.855rem;color:#a7bdd8}
   .assure div{display:flex;align-items:center;gap:8px}
   .assure svg{width:16px;height:16px;stroke:#4ec07f;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-
-  /* hero card */
-  .hcard{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:30px;backdrop-filter:blur(8px)}
+  .hcard{background:rgba(9,20,38,.70);border:1px solid rgba(255,255,255,.17);border-radius:14px;padding:30px;backdrop-filter:blur(14px);box-shadow:0 22px 60px rgba(0,0,0,.4)}
   .hcard h3{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#8fb3d8;font-weight:650;margin-bottom:19px}
-  .hrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid rgba(255,255,255,.11);font-size:.9rem}
+  .hrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem}
   .hrow:first-of-type{border-top:none;padding-top:0}
   .hrow span{color:#9db4cf}
   .hrow b{color:#fff;font-weight:600;text-align:right}
 
-  /* ---------- logos/bar ---------- */
-  .bar{background:var(--ink3);color:#cfe0f3;padding:0}
+  /* stat bar */
+  .bar{background:var(--ink3);position:relative;z-index:3}
   .bar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border-inline:1px solid rgba(255,255,255,.1)}
   .bar .cell{background:var(--ink3);padding:26px 24px}
   .bar b{display:block;font-size:1.42rem;color:#fff;font-weight:740;letter-spacing:-.022em}
   .bar span{font-size:.8rem;color:#9fb6d2}
 
-  /* ---------- services ---------- */
+  /* services */
   .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(336px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
   .svc article{background:#fff;padding:34px 30px;transition:background .18s}
   .svc article:hover{background:var(--bg2)}
   .svc .ico{width:42px;height:42px;border-radius:9px;background:var(--blue-pale);display:grid;place-items:center;margin-bottom:19px}
   .svc .ico svg{width:21px;height:21px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
   .svc h3{font-size:1.09rem;margin-bottom:10px}
-  .svc > article > p{color:var(--muted);font-size:.935rem}
-  .deliv{margin:19px 0 0;padding:17px 0 0;border-top:1px solid var(--line2);list-style:none}
-  .deliv li{position:relative;padding-left:21px;font-size:.865rem;color:var(--muted);margin-bottom:7px}
-  .deliv li:last-child{margin-bottom:0}
-  .deliv li::before{content:"";position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--blue);opacity:.55}
+  .svc article > p{color:var(--muted);font-size:.935rem}
+  .dwrap{margin-top:19px;padding-top:17px;border-top:1px solid var(--line2)}
   .deliv-h{font-size:.715rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted2);font-weight:700;margin-bottom:11px}
+  ul.deliv{list-style:none;padding:0;margin:0}
+  ul.deliv li{position:relative;padding-left:21px;font-size:.865rem;color:var(--muted);margin-bottom:7px}
+  ul.deliv li:last-child{margin-bottom:0}
+  ul.deliv li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--blue);opacity:.55}
 
-  /* ---------- engagement ---------- */
+  /* engagements */
   .eng{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
   .eng article{background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px 28px;display:flex;flex-direction:column;position:relative}
   .eng article.feat{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,111,196,.09)}
   .flag{position:absolute;top:-11px;left:28px;background:var(--blue);color:#fff;font-size:.675rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
   .eng h3{font-size:1.14rem}
-  .eng .dur{font-size:.79rem;color:var(--blue);font-weight:650;margin-top:7px;letter-spacing:.02em}
-  .eng > article > p{color:var(--muted);font-size:.925rem;margin-top:14px}
+  .eng .dur{font-size:.79rem;color:var(--blue);font-weight:650;margin-top:7px}
+  .eng article > p{color:var(--muted);font-size:.925rem;margin-top:14px}
   .eng ul{list-style:none;padding:19px 0 0;margin:19px 0 0;border-top:1px solid var(--line2);flex:1}
   .eng li{position:relative;padding-left:25px;font-size:.885rem;color:var(--muted);margin-bottom:10px}
   .eng li svg{position:absolute;left:0;top:.33em;width:15px;height:15px;stroke:var(--ok);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
   .eng .btn{margin-top:24px;width:100%}
 
-  /* ---------- process ---------- */
+  /* process */
   .proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--line)}
-  .proc .ph{background:#fff;padding:30px 26px;position:relative}
+  .proc .ph{background:#fff;padding:30px 26px}
   .proc .n{font-size:.72rem;font-weight:800;color:var(--blue);letter-spacing:.11em;display:block;margin-bottom:13px}
   .proc h4{font-size:1.015rem;margin-bottom:9px}
   .proc p{font-size:.875rem;color:var(--muted)}
 
-  /* ---------- stack ---------- */
+  /* figure / diagram */
+  figure.diagram{margin:60px 0 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:34px 30px 26px}
+  figure.diagram svg{width:100%;height:auto;display:block}
+  figcaption{margin-top:20px;padding-top:17px;border-top:1px solid var(--line2);font-size:.835rem;color:var(--muted2);text-align:center}
+
+  /* split media block */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .split-media{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 48px rgba(10,22,40,.13)}
+  .split-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+  .badge{
+    position:absolute;left:22px;bottom:22px;background:rgba(10,22,40,.93);backdrop-filter:blur(8px);
+    color:#fff;border-radius:10px;padding:16px 20px;border:1px solid rgba(255,255,255,.14);max-width:255px
+  }
+  .badge b{display:block;font-size:1.5rem;font-weight:750;letter-spacing:-.025em;line-height:1.1}
+  .badge span{font-size:.79rem;color:#a7bdd8}
+  .why-list{list-style:none;padding:0;margin:30px 0 0}
+  .why-list li{position:relative;padding-left:46px;margin-bottom:26px}
+  .why-list li:last-child{margin-bottom:0}
+  .why-list .n{position:absolute;left:0;top:1px;width:31px;height:31px;border-radius:7px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:.78rem;font-weight:700}
+  .why-list h4{font-size:1.02rem;margin-bottom:6px}
+  .why-list p{font-size:.92rem;color:var(--muted)}
+
+  /* capability stack */
   .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:34px}
   .stack h4{font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:750;padding-bottom:12px;border-bottom:2px solid var(--blue);display:inline-block;margin-bottom:17px}
   .stack ul{list-style:none;padding:0;margin:0}
   .stack li{font-size:.91rem;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--line2)}
 
-  /* ---------- why ---------- */
-  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:34px}
-  .why .n{width:34px;height:34px;border-radius:7px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:.82rem;font-weight:700;margin-bottom:17px}
-  .why h4{font-size:1.045rem;margin-bottom:10px}
-  .why p{font-size:.925rem;color:var(--muted)}
-
-  /* ---------- faq ---------- */
+  /* faq */
   .faq{max-width:830px;margin:0 auto;border-top:1px solid var(--line)}
   details{border-bottom:1px solid var(--line)}
   summary{cursor:pointer;padding:21px 42px 21px 0;font-weight:620;font-size:1.005rem;color:var(--ink);list-style:none;position:relative}
@@ -158,16 +181,20 @@
   details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
   details p{padding:0 48px 23px 0;color:var(--muted);font-size:.945rem;margin-top:-4px}
 
-  /* ---------- cta ---------- */
-  .cta{background:linear-gradient(135deg,#0a1628 0%,#123055 100%);color:#fff;padding:84px 0}
+  /* CTA with imagery */
+  .cta{position:relative;color:#fff;padding:92px 0;overflow:hidden;background:var(--ink)}
+  .cta-bg{position:absolute;inset:0;z-index:0}
+  .cta-bg img{width:100%;height:100%;object-fit:cover}
+  .cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(103deg,rgba(10,22,40,.975) 0%,rgba(10,22,40,.93) 44%,rgba(16,40,72,.82) 100%)}
+  .cta .wrap{position:relative;z-index:2}
   .cta-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
   .cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
-  .cta p{color:#b6c9e0;margin-top:17px;font-size:1.03rem}
+  .cta p{color:#bdcfe4;margin-top:17px;font-size:1.03rem}
   .cta-act{display:flex;flex-direction:column;gap:12px}
-  .cta-note{font-size:.825rem;color:#91a9c5;margin-top:5px}
+  .cta-note{font-size:.825rem;color:#95adc8;margin-top:5px}
 
-  /* ---------- footer ---------- */
-  footer{background:var(--ink);color:#9fb4ce;padding:62px 0 32px;font-size:.89rem}
+  /* footer */
+  footer{background:var(--ink);color:#9fb4ce;padding:62px 0 32px;font-size:.89rem;border-top:1px solid rgba(255,255,255,.1)}
   .f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:42px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
   .f-grid h5{color:#fff;font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 17px;font-weight:700}
   .f-grid ul{list-style:none;padding:0;margin:0}
@@ -183,7 +210,9 @@
 
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;gap:44px;padding-bottom:68px}
-    .cta-grid{grid-template-columns:1fr;gap:34px}
+    .hero-veil{background:linear-gradient(170deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.9) 55%,rgba(13,31,56,.86) 100%)}
+    .cta-grid,.split{grid-template-columns:1fr;gap:38px}
+    .split-media{order:-1}
     .bar .wrap{grid-template-columns:repeat(2,1fr)}
     .f-grid{grid-template-columns:1fr 1fr;gap:34px}
   }
@@ -197,13 +226,13 @@
     section{padding:62px 0}
     .hero{padding-top:62px}
     .wrap{padding:0 20px}
+    figure.diagram{padding:22px 16px 18px;margin-top:40px}
   }
   @media (max-width:520px){ .bar .wrap{grid-template-columns:1fr} .f-grid{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
 
-<!-- utility bar -->
 <div class="util">
   <div class="wrap">
     <span>The consulting practice of <a href="https://www.rcwittraining.in/" target="_blank" rel="noopener">RCW IT Training</a></span>
@@ -236,20 +265,22 @@
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-bg"><img src="assets/hero-network.jpg" alt="" aria-hidden="true" width="1584" height="672"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-veil2"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <span class="tagline">Independent · Vendor-neutral</span>
         <h1>Infrastructure consulting<br>delivered by <em>practising engineers</em>.</h1>
         <p class="sub">
-          We assess, migrate and operate cloud and on-premises infrastructure for organisations
-          that need the work done properly the first time — with documentation, a tested rollback
-          and a team that can run it after we leave.
+          We assess, migrate and operate cloud and on-premises infrastructure for organisations that
+          need the work done properly the first time — with documentation, a tested rollback and a
+          team that can run it after we leave.
         </p>
         <div class="hero-cta">
           <a class="btn btn-w" href="#contact">Request an assessment
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn-gh" href="#services">View services</a>
         </div>
         <div class="assure">
@@ -270,7 +301,6 @@
   </div>
 </div>
 
-<!-- STAT BAR -->
 <div class="bar">
   <div class="wrap">
     <div class="cell"><b>Assess</b><span>Dependency-mapped, evidence-based</span></div>
@@ -291,103 +321,89 @@
     </div>
 
     <div class="svc">
-
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.1 9.4 4.5 4.5 0 0 0 6.5 19z"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg></div>
         <h3>Cloud Migration &amp; Modernisation</h3>
         <p>Move workloads off ageing on-premises estates on a wave plan with validation gates and a rehearsed rollback — not a weekend big-bang.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>Workload inventory and dependency map</li>
             <li>Migration wave plan with sequencing</li>
             <li>Pilot migration and validation report</li>
             <li>Cutover runbook including rollback steps</li>
             <li>Post-migration cost and performance review</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
 
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
         <h3>Cloud Architecture &amp; Landing Zones</h3>
         <p>Account structure, network topology and guardrails designed up front, so the platform stays governable as more teams build on it.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>Multi-account / subscription design</li>
             <li>Network segmentation and connectivity model</li>
             <li>Identity, access and permission boundaries</li>
             <li>Tagging, budget alerts and cost guardrails</li>
             <li>Architecture decision records</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
 
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 19h20"/><path d="m8 9 2.5 2.5L8 14"/><path d="M12.5 14H16"/></svg></div>
         <h3>Linux &amp; Platform Engineering</h3>
         <p>Standardised, hardened and automated enterprise Linux — so builds are repeatable and patching stops being a quarterly crisis.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>Golden image and build standard (RHEL / Rocky / Ubuntu)</li>
             <li>CIS-aligned hardening baseline</li>
             <li>Patch and lifecycle management strategy</li>
             <li>Ansible configuration management</li>
             <li>Operational documentation set</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
 
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
         <h3>Virtualisation &amp; Digital Workspace</h3>
         <p>Virtual desktop and endpoint estates sized on real usage data, with an enrolment and application delivery model users don't fight.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>VDI capacity and host sizing model</li>
             <li>Intune enrolment and compliance policies</li>
             <li>Application packaging and delivery strategy</li>
             <li>Profile and FSLogix container design</li>
             <li>Pilot ring definition and rollout plan</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
 
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
         <h3>Storage, Backup &amp; Disaster Recovery</h3>
         <p>Resilience planning where the restore is actually tested — because an unverified backup is only an expensive assumption.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>Capacity and growth projection</li>
             <li>Backup policy, tiering and retention design</li>
             <li>DR runbook with agreed RTO / RPO targets</li>
             <li>Restore test schedule and evidence pack</li>
             <li>Ransomware resilience and immutability review</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
 
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
         <h3>Reliability &amp; Incident Response</h3>
         <p>Get to genuine root cause on production incidents, then close the loop so the same failure cannot recur unnoticed.</p>
-        <div class="deliv">
-          <div class="deliv-h">Typical deliverables</div>
-          <ul class="deliv" style="border:0;padding:0;margin:0">
+        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+          <ul class="deliv">
             <li>Structured root cause analysis report</li>
             <li>Monitoring and alerting baseline</li>
             <li>Runbook library for common failures</li>
             <li>On-call and escalation model</li>
             <li>Post-incident review process</li>
-          </ul>
-        </div>
+          </ul></div>
       </article>
-
     </div>
   </div>
 </section>
@@ -399,9 +415,8 @@
       <span class="eyebrow">Engagement models</span>
       <h2>Three ways to work with us</h2>
       <p class="lead">Start small and prove the value. Most clients begin with an assessment and expand
-        from there once the roadmap is agreed.</p>
+        once the roadmap is agreed.</p>
     </div>
-
     <div class="eng">
       <article>
         <h3>Infrastructure Assessment</h3>
@@ -449,7 +464,7 @@
   </div>
 </section>
 
-<!-- APPROACH -->
+<!-- APPROACH + DIAGRAM -->
 <section id="approach">
   <div class="wrap">
     <div class="s-head">
@@ -465,11 +480,130 @@
       <div class="ph"><span class="n">PHASE 04</span><h4>Deliver</h4><p>Phased cutover with validation gates, agreed success criteria and a rehearsed rollback at each step.</p></div>
       <div class="ph"><span class="n">PHASE 05</span><h4>Hand over</h4><p>As-built documentation, runbooks and working sessions so your team can operate it unaided.</p></div>
     </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 1000 452" role="img" aria-label="Illustrative target landing zone architecture showing governance, hybrid connectivity, production, non-production and shared services environments, with observability, backup and disaster recovery underneath.">
+        <defs>
+          <style>
+            .lbl{font:600 13px Inter,system-ui,sans-serif;fill:#16202e}
+            .sm{font:500 11.5px Inter,system-ui,sans-serif;fill:#51637c}
+            .hd{font:700 10.5px Inter,system-ui,sans-serif;fill:#1a6fc4;letter-spacing:1.4px}
+            .wh{font:700 12.5px Inter,system-ui,sans-serif;fill:#fff}
+            .whs{font:500 11px Inter,system-ui,sans-serif;fill:#a9c6e8}
+          </style>
+        </defs>
+
+        <!-- governance band -->
+        <rect x="0" y="0" width="1000" height="62" rx="9" fill="#0a1628"/>
+        <text class="wh" x="26" y="29">Identity, Governance &amp; Policy Guardrails</text>
+        <text class="whs" x="26" y="48">Entra ID / IAM · least-privilege boundaries · tagging · budget &amp; drift controls</text>
+        <g fill="none" stroke="#2c8ef0" stroke-width="1.5" opacity=".75">
+          <circle cx="930" cy="31" r="13"/><path d="M930 24v14M923 31h14"/>
+        </g>
+
+        <!-- connectors from governance -->
+        <g stroke="#c3d3e6" stroke-width="1.5" stroke-dasharray="4 4">
+          <path d="M190 62v26M500 62v26M810 62v26"/>
+        </g>
+
+        <!-- three environment columns -->
+        <g>
+          <rect x="10" y="88" width="300" height="212" rx="10" fill="#fff" stroke="#dfe6ef"/>
+          <rect x="10" y="88" width="300" height="34" rx="10" fill="#eaf3fc"/>
+          <rect x="10" y="112" width="300" height="10" fill="#eaf3fc"/>
+          <text class="hd" x="28" y="110">PRODUCTION</text>
+          <rect x="28" y="138" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="44" y="158">Application &amp; web tier</text>
+          <text class="sm" x="44" y="174">Auto-scaled compute · load balanced</text>
+          <rect x="28" y="192" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="44" y="212">Database &amp; data services</text>
+          <text class="sm" x="44" y="228">Managed, replicated, encrypted</text>
+          <rect x="28" y="246" width="264" height="38" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="44" y="270">Private subnets · no public ingress</text>
+        </g>
+
+        <g>
+          <rect x="350" y="88" width="300" height="212" rx="10" fill="#fff" stroke="#dfe6ef"/>
+          <rect x="350" y="88" width="300" height="34" rx="10" fill="#eaf3fc"/>
+          <rect x="350" y="112" width="300" height="10" fill="#eaf3fc"/>
+          <text class="hd" x="368" y="110">NON-PRODUCTION</text>
+          <rect x="368" y="138" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="384" y="158">Dev / test environments</text>
+          <text class="sm" x="384" y="174">Isolated accounts · scheduled shutdown</text>
+          <rect x="368" y="192" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="384" y="212">Staging mirror</text>
+          <text class="sm" x="384" y="228">Production-like, for cutover rehearsal</text>
+          <rect x="368" y="246" width="264" height="38" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="384" y="270">CI/CD pipelines · IaC validation</text>
+        </g>
+
+        <g>
+          <rect x="690" y="88" width="300" height="212" rx="10" fill="#fff" stroke="#dfe6ef"/>
+          <rect x="690" y="88" width="300" height="34" rx="10" fill="#eaf3fc"/>
+          <rect x="690" y="112" width="300" height="10" fill="#eaf3fc"/>
+          <text class="hd" x="708" y="110">SHARED SERVICES</text>
+          <rect x="708" y="138" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="724" y="158">Directory &amp; endpoint management</text>
+          <text class="sm" x="724" y="174">Intune · AVD / Citrix · patching</text>
+          <rect x="708" y="192" width="264" height="44" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="724" y="212">Golden images &amp; artefacts</text>
+          <text class="sm" x="724" y="228">RHEL / Windows build standards</text>
+          <rect x="708" y="246" width="264" height="38" rx="7" fill="#f7f9fc" stroke="#e6ecf4"/>
+          <text class="lbl" x="724" y="270">Secrets &amp; certificate management</text>
+        </g>
+
+        <!-- connectivity spine -->
+        <rect x="10" y="318" width="480" height="54" rx="9" fill="#16314f"/>
+        <text class="wh" x="32" y="342">Hybrid Connectivity</text>
+        <text class="whs" x="32" y="360">VPN / ExpressRoute / Direct Connect · segmented transit · firewall inspection</text>
+
+        <rect x="510" y="318" width="480" height="54" rx="9" fill="#16314f"/>
+        <text class="wh" x="532" y="342">Observability, Backup &amp; DR</text>
+        <text class="whs" x="532" y="360">Metrics · logs · alerting · immutable backups · tested restore to agreed RTO/RPO</text>
+
+        <!-- on-prem footer -->
+        <rect x="10" y="390" width="980" height="52" rx="9" fill="#fff" stroke="#dfe6ef" stroke-dasharray="6 5"/>
+        <text class="lbl" x="32" y="412">Remaining on-premises estate</text>
+        <text class="sm" x="32" y="430">VMware / Hyper-V · TrueNAS &amp; storage · retained workloads integrated, not stranded</text>
+        <g stroke="#1a6fc4" stroke-width="1.8" fill="none" opacity=".6">
+          <path d="M250 390v-18M500 390v-18M750 390v-18"/>
+        </g>
+      </svg>
+      <figcaption>Illustrative target landing zone. Actual designs are sized to your workloads, compliance obligations and budget.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- WHY + PHOTO -->
+<section class="shaded" id="why">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Why RCWIT Consulting</span>
+        <h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0">Engineers who teach what they ship</h2>
+        <p class="lead" style="margin-top:15px">
+          RCWIT Consulting is the consulting practice behind
+          <a href="https://www.rcwittraining.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">RCW IT Training</a>,
+          an independent platform with 225+ free hands-on labs across Linux, cloud, networking and endpoint
+          management. The engineers who author those labs do the client work.
+        </p>
+        <ul class="why-list">
+          <li><span class="n">01</span><h4>Practitioner-led</h4><p>You work directly with the engineer doing the implementation — no account-management layer translating the technical detail into something vaguer.</p></li>
+          <li><span class="n">02</span><h4>Genuinely vendor-neutral</h4><p>We hold no resale margins or partner quotas, so nothing steers the design commercially. Sometimes the right recommendation is to keep what you already have.</p></li>
+          <li><span class="n">03</span><h4>Documentation as a deliverable</h4><p>As-built documents, runbooks and enablement sessions are in scope, never an upsell. The objective is that you stop needing us.</p></li>
+          <li><span class="n">04</span><h4>Tested, not theoretical</h4><p>Recommendations come from systems we have deliberately broken and rebuilt in lab conditions before they reach your production estate.</p></li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <img src="assets/engineers.jpg" alt="Two infrastructure engineers reviewing a network architecture diagram on a wall-mounted display" loading="lazy" width="1200" height="655">
+        <div class="badge"><b>225+</b><span>hands-on labs authored and maintained by the same engineers</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CAPABILITIES -->
-<section class="shaded" id="capabilities">
+<section id="capabilities">
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow">Capabilities</span>
@@ -477,52 +611,12 @@
       <p class="lead">Depth from hypervisor and storage through to cloud control planes, identity and the endpoint.</p>
     </div>
     <div class="stack">
-      <div>
-        <h4>Cloud</h4>
-        <ul><li>Amazon Web Services</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li></ul>
-      </div>
-      <div>
-        <h4>Virtualisation</h4>
-        <ul><li>VMware vSphere</li><li>Microsoft Hyper-V</li><li>Azure Virtual Desktop</li><li>Citrix Virtual Apps &amp; Desktops</li><li>Amazon WorkSpaces</li></ul>
-      </div>
-      <div>
-        <h4>Operating systems</h4>
-        <ul><li>Red Hat Enterprise Linux 9 / 10</li><li>Rocky Linux &amp; AlmaLinux</li><li>Ubuntu Server LTS</li><li>Windows Server</li><li>Shell &amp; systemd engineering</li></ul>
-      </div>
-      <div>
-        <h4>Endpoint &amp; identity</h4>
-        <ul><li>Microsoft Intune</li><li>Entra ID / Active Directory</li><li>Conditional Access</li><li>Autopilot provisioning</li><li>Application packaging</li></ul>
-      </div>
-      <div>
-        <h4>Data protection</h4>
-        <ul><li>Veeam Backup &amp; Replication</li><li>TrueNAS Scale</li><li>Snapshot &amp; replication design</li><li>Immutable backup targets</li><li>DR orchestration &amp; testing</li></ul>
-      </div>
-      <div>
-        <h4>Automation &amp; networking</h4>
-        <ul><li>Ansible</li><li>Terraform</li><li>Docker &amp; containers</li><li>Cisco routing &amp; switching</li><li>On-premises LLM operations</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Why RCWIT Consulting</span>
-      <h2>Engineers who teach what they ship</h2>
-      <p class="lead">
-        RCWIT Consulting is the consulting practice behind
-        <a href="https://www.rcwittraining.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">RCW IT Training</a>,
-        an independent platform with 225+ free hands-on labs across Linux, cloud, networking and endpoint
-        management. The engineers who author those labs do the client work.
-      </p>
-    </div>
-    <div class="why">
-      <div><div class="n">01</div><h4>Practitioner-led</h4><p>You work directly with the engineer doing the implementation — no account-management layer translating the technical detail into something vaguer.</p></div>
-      <div><div class="n">02</div><h4>Genuinely vendor-neutral</h4><p>We hold no resale margins or partner quotas, so nothing steers the design commercially. Sometimes the right recommendation is to keep what you already have.</p></div>
-      <div><div class="n">03</div><h4>Documentation as a deliverable</h4><p>As-built documents, runbooks and enablement sessions are part of the scope, never an upsell. The objective is that you stop needing us.</p></div>
-      <div><div class="n">04</div><h4>Tested, not theoretical</h4><p>Recommendations come from systems we have deliberately broken and rebuilt in lab conditions — repeatedly — before they ever reach your production estate.</p></div>
+      <div><h4>Cloud</h4><ul><li>Amazon Web Services</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li></ul></div>
+      <div><h4>Virtualisation</h4><ul><li>VMware vSphere</li><li>Microsoft Hyper-V</li><li>Azure Virtual Desktop</li><li>Citrix Virtual Apps &amp; Desktops</li><li>Amazon WorkSpaces</li></ul></div>
+      <div><h4>Operating systems</h4><ul><li>Red Hat Enterprise Linux 9 / 10</li><li>Rocky Linux &amp; AlmaLinux</li><li>Ubuntu Server LTS</li><li>Windows Server</li><li>Shell &amp; systemd engineering</li></ul></div>
+      <div><h4>Endpoint &amp; identity</h4><ul><li>Microsoft Intune</li><li>Entra ID / Active Directory</li><li>Conditional Access</li><li>Autopilot provisioning</li><li>Application packaging</li></ul></div>
+      <div><h4>Data protection</h4><ul><li>Veeam Backup &amp; Replication</li><li>TrueNAS Scale</li><li>Snapshot &amp; replication design</li><li>Immutable backup targets</li><li>DR orchestration &amp; testing</li></ul></div>
+      <div><h4>Automation &amp; networking</h4><ul><li>Ansible</li><li>Terraform</li><li>Docker &amp; containers</li><li>Cisco routing &amp; switching</li><li>On-premises LLM operations</li></ul></div>
     </div>
   </div>
 </section>
@@ -535,36 +629,26 @@
       <h2>Before you get in touch</h2>
     </div>
     <div class="faq">
-      <details open>
-        <summary>How does a typical engagement start?</summary>
-        <p>With a short, no-obligation call to understand the problem. If it looks like a fit, we propose a fixed-scope assessment with a defined deliverable and price. You are free to take that roadmap and implement it yourself, or with any partner you choose.</p>
-      </details>
-      <details>
-        <summary>Do you work alongside our existing MSP or internal team?</summary>
-        <p>Routinely. We are often brought in for a specific capability gap — a migration, a hardening programme, a recurring incident nobody has closed out — and work as an extension of the existing team rather than a replacement for it.</p>
-      </details>
-      <details>
-        <summary>Do you resell licences or hardware?</summary>
-        <p>No. We take no resale margin, referral fee or vendor commission of any kind. Our only revenue is the engineering time you engage us for, which is what keeps the architecture advice honest.</p>
-      </details>
-      <details>
-        <summary>How is pricing structured?</summary>
-        <p>Assessments are fixed price against a written scope. Projects are milestone-based with agreed acceptance criteria per milestone. Retainers are a monthly block of hours. We do not bill open-ended time and materials without a cap.</p>
-      </details>
-      <details>
-        <summary>Can you work remotely, and in which time zones?</summary>
-        <p>Delivery is remote-first and we work primarily in IST, with overlap available for EMEA and APAC business hours. Cutover windows and maintenance work are scheduled around your change calendar, including nights and weekends where required.</p>
-      </details>
-      <details>
-        <summary>What happens at the end of an engagement?</summary>
-        <p>You receive the as-built documentation, runbooks and configuration artefacts, plus a handover session with the people who will operate the platform. There is no dependency on us to keep it running, and no proprietary tooling left behind.</p>
-      </details>
+      <details open><summary>How does a typical engagement start?</summary>
+        <p>With a short, no-obligation call to understand the problem. If it looks like a fit, we propose a fixed-scope assessment with a defined deliverable and price. You are free to take that roadmap and implement it yourself, or with any partner you choose.</p></details>
+      <details><summary>Do you work alongside our existing MSP or internal team?</summary>
+        <p>Routinely. We are often brought in for a specific capability gap — a migration, a hardening programme, a recurring incident nobody has closed out — and work as an extension of the existing team rather than a replacement for it.</p></details>
+      <details><summary>Do you resell licences or hardware?</summary>
+        <p>No. We take no resale margin, referral fee or vendor commission of any kind. Our only revenue is the engineering time you engage us for, which is what keeps the architecture advice honest.</p></details>
+      <details><summary>How is pricing structured?</summary>
+        <p>Assessments are fixed price against a written scope. Projects are milestone-based with agreed acceptance criteria per milestone. Retainers are a monthly block of hours. We do not bill open-ended time and materials without a cap.</p></details>
+      <details><summary>Can you work remotely, and in which time zones?</summary>
+        <p>Delivery is remote-first and we work primarily in IST, with overlap available for EMEA and APAC business hours. Cutover windows and maintenance work are scheduled around your change calendar, including nights and weekends where required.</p></details>
+      <details><summary>What happens at the end of an engagement?</summary>
+        <p>You receive the as-built documentation, runbooks and configuration artefacts, plus a handover session with the people who will operate the platform. There is no dependency on us to keep it running, and no proprietary tooling left behind.</p></details>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <div class="cta" id="contact">
+  <div class="cta-bg"><img src="assets/datacenter.jpg" alt="" aria-hidden="true" loading="lazy" width="1408" height="768"></div>
+  <div class="cta-veil"></div>
   <div class="wrap">
     <div class="cta-grid">
       <div>
@@ -577,10 +661,9 @@
       <div class="cta-act">
         <a class="btn btn-w" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.5c0-1.31-.02-3-1.9-3-1.9 0-2.2 1.43-2.2 2.9V21H9z"/></svg>
-          Connect on LinkedIn
-        </a>
-        <!-- TODO: add a direct email / phone CTA here when published, e.g.
-             <a class="btn btn-gh" href="mailto:you@rcwittraining.in">Email the practice</a> -->
+          Connect on LinkedIn</a>
+        <!-- TODO: add a direct email CTA here once published, e.g.
+             <a class="btn btn-gh" href="mailto:hello@rcwittraining.in">Email the practice</a> -->
         <a class="btn btn-gh" href="https://www.rcwittraining.in/" target="_blank" rel="noopener">Visit RCW IT Training</a>
         <p class="cta-note">Initial consultation is free and carries no obligation.</p>
       </div>
@@ -601,36 +684,24 @@
         <p>Independent infrastructure consulting — assessments, migrations and platform engineering,
            delivered by engineers who still build in the lab every week.</p>
       </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="#services">Cloud migration</a></li>
-          <li><a href="#services">Architecture &amp; landing zones</a></li>
-          <li><a href="#services">Linux engineering</a></li>
-          <li><a href="#services">Virtualisation &amp; workspace</a></li>
-          <li><a href="#services">Backup &amp; disaster recovery</a></li>
-          <li><a href="#services">Incident response</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Practice</h5>
-        <ul>
-          <li><a href="#engagements">Engagement models</a></li>
-          <li><a href="#approach">Methodology</a></li>
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#why">Why RCWIT</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.youtube.com/@RajuRishiDev" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://www.rcwittraining.in/" target="_blank" rel="noopener">RCW IT Training</a></li>
-          <li><a href="#contact">Request an assessment</a></li>
-        </ul>
-      </div>
+      <div><h5>Services</h5><ul>
+        <li><a href="#services">Cloud migration</a></li>
+        <li><a href="#services">Architecture &amp; landing zones</a></li>
+        <li><a href="#services">Linux engineering</a></li>
+        <li><a href="#services">Virtualisation &amp; workspace</a></li>
+        <li><a href="#services">Backup &amp; disaster recovery</a></li>
+        <li><a href="#services">Incident response</a></li></ul></div>
+      <div><h5>Practice</h5><ul>
+        <li><a href="#engagements">Engagement models</a></li>
+        <li><a href="#approach">Methodology</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#why">Why RCWIT</a></li>
+        <li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Connect</h5><ul>
+        <li><a href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@RajuRishiDev" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.rcwittraining.in/" target="_blank" rel="noopener">RCW IT Training</a></li>
+        <li><a href="#contact">Request an assessment</a></li></ul></div>
     </div>
     <div class="f-bot">
       <span>© <span id="yr">2026</span> RCWIT Consulting. All rights reserved.</span>
@@ -645,15 +716,10 @@
 </footer>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('yr').textContent=new Date().getFullYear();
   var b=document.getElementById('burger'), m=document.getElementById('menu');
-  b.addEventListener('click',function(){
-    var o=m.classList.toggle('open');
-    b.setAttribute('aria-expanded', o?'true':'false');
-  });
-  m.addEventListener('click',function(e){
-    if(e.target.closest('a')){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
-  });
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+  m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false');}});
 </script>
 </body>
 </html>
