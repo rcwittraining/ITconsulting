@@ -59,8 +59,9 @@
   .brand b{display:block;font-size:1.035rem;font-weight:750;letter-spacing:-.02em;color:var(--ink)}
   .brand span{display:block;font-size:.675rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted2);font-weight:600;line-height:1.3}
   nav.links{margin-left:auto;display:flex;align-items:center;gap:30px}
-  nav.links a{font-size:.905rem;font-weight:550;color:var(--muted);transition:color .16s}
-  nav.links a:hover{color:var(--ink)}
+  /* :not(.btn) so this rule never overrides button colours on specificity */
+  nav.links a:not(.btn){font-size:.905rem;font-weight:550;color:var(--muted);transition:color .16s}
+  nav.links a:not(.btn):hover{color:var(--ink)}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 22px;border-radius:8px;font-size:.905rem;font-weight:650;border:1px solid transparent;transition:background .16s,color .16s,border-color .16s;cursor:pointer}
   .btn-p{background:var(--blue);color:#fff;border-color:var(--blue)}
   .btn-p:hover{background:var(--blue-d);border-color:var(--blue-d)}
@@ -82,7 +83,7 @@
   .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 50%}
   .hero-veil{
     position:absolute;inset:0;z-index:1;
-    background:linear-gradient(97deg,#0a1628 0%,rgba(10,22,40,.985) 30%,rgba(11,25,45,.90) 48%,rgba(13,31,56,.62) 68%,rgba(16,38,66,.34) 100%);
+    background:linear-gradient(97deg,#0a1628 0%,rgba(10,22,40,.965) 25%,rgba(11,25,45,.85) 43%,rgba(13,31,56,.52) 66%,rgba(16,38,66,.24) 100%);
   }
   .hero-veil2{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,transparent 22%,transparent 72%,rgba(10,22,40,.92) 100%)}
   .hero .wrap{position:relative;z-index:2}
@@ -166,6 +167,39 @@
   .why-list h4{font-size:1.02rem;margin-bottom:6px}
   .why-list p{font-size:.92rem;color:var(--muted)}
 
+  /* full-width image band */
+  .band{position:relative;color:#fff;padding:86px 0;overflow:hidden;background:var(--ink);border-block:1px solid rgba(255,255,255,.08)}
+  .band-bg{position:absolute;inset:0;z-index:0}
+  .band-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .band-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(98deg,rgba(8,18,34,.95) 0%,rgba(8,18,34,.86) 32%,rgba(9,22,42,.56) 60%,rgba(10,26,48,.30) 100%)}
+  .band .wrap{position:relative;z-index:2}
+  .band-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:58px;align-items:center}
+  .band h2{font-size:clamp(1.5rem,2.8vw,2.05rem);margin:13px 0 0;max-width:560px}
+  .band > .wrap p.bl{color:#bdcfe4;margin-top:16px;max-width:520px;font-size:1.01rem}
+  .band-pts{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+  .band-pts li{
+    display:flex;gap:14px;align-items:flex-start;background:rgba(8,18,34,.62);
+    border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:17px 19px;backdrop-filter:blur(9px)
+  }
+  .band-pts svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;stroke:#64b2f8;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .band-pts b{display:block;font-size:.945rem;font-weight:650;color:#fff;margin-bottom:3px}
+  .band-pts span{font-size:.865rem;color:#a7bdd8;line-height:1.55}
+
+  /* section banner image */
+  .banner{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);margin-bottom:48px;box-shadow:0 16px 40px rgba(10,22,40,.12)}
+  .banner img{width:100%;height:100%;object-fit:cover;aspect-ratio:40/9;display:block}
+  .banner-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:34px 32px 26px;
+    background:linear-gradient(0deg,rgba(8,18,34,.93) 0%,rgba(8,18,34,.62) 55%,transparent 100%);color:#fff
+  }
+  .banner-cap b{display:block;font-size:1.06rem;font-weight:680;letter-spacing:-.015em}
+  .banner-cap span{font-size:.875rem;color:#b4c8de}
+
+  /* engagements intro split */
+  .eng-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;margin-bottom:50px}
+  .eng-intro-media{border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(10,22,40,.14)}
+  .eng-intro-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+
   /* capability stack */
   .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:34px}
   .stack h4{font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:750;padding-bottom:12px;border-bottom:2px solid var(--blue);display:inline-block;margin-bottom:17px}
@@ -185,7 +219,7 @@
   .cta{position:relative;color:#fff;padding:92px 0;overflow:hidden;background:var(--ink)}
   .cta-bg{position:absolute;inset:0;z-index:0}
   .cta-bg img{width:100%;height:100%;object-fit:cover}
-  .cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(103deg,rgba(10,22,40,.975) 0%,rgba(10,22,40,.93) 44%,rgba(16,40,72,.82) 100%)}
+  .cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.84) 34%,rgba(12,30,55,.56) 62%,rgba(14,36,66,.34) 100%)}
   .cta .wrap{position:relative;z-index:2}
   .cta-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
   .cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
@@ -211,8 +245,11 @@
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;gap:44px;padding-bottom:68px}
     .hero-veil{background:linear-gradient(170deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.9) 55%,rgba(13,31,56,.86) 100%)}
-    .cta-grid,.split{grid-template-columns:1fr;gap:38px}
+    .cta-grid,.split,.band-grid,.eng-intro{grid-template-columns:1fr;gap:38px}
     .split-media{order:-1}
+    .band-veil{background:linear-gradient(170deg,rgba(8,18,34,.93) 0%,rgba(8,18,34,.86) 60%,rgba(10,26,48,.80) 100%)}
+    .cta-veil{background:linear-gradient(170deg,rgba(10,22,40,.94) 0%,rgba(10,22,40,.88) 60%,rgba(14,36,66,.82) 100%)}
+    .banner img{aspect-ratio:21/9}
     .bar .wrap{grid-template-columns:repeat(2,1fr)}
     .f-grid{grid-template-columns:1fr 1fr;gap:34px}
   }
@@ -408,14 +445,51 @@
   </div>
 </section>
 
+<!-- MIGRATION BAND -->
+<div class="band">
+  <div class="band-bg"><img src="assets/migration-band.jpg" alt="" aria-hidden="true" loading="lazy" width="1584" height="672"></div>
+  <div class="band-veil"></div>
+  <div class="wrap">
+    <div class="band-grid">
+      <div>
+        <span class="eyebrow" style="color:#64b2f8">Where migrations go wrong</span>
+        <h2>Migrations rarely fail at cutover. They fail on the dependency nobody mapped.</h2>
+        <p class="bl">The technical move is usually the easy part. What derails projects is everything
+          that was never written down — and that is exactly what the discovery phase is for.</p>
+      </div>
+      <ul class="band-pts">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <div><b>Undocumented integrations</b><span>Legacy interfaces discovered mid-cutover, when the rollback window is already closing.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div><b>Licensing tied to old hardware</b><span>Entitlements and support contracts bound to host IDs that will not exist after the move.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg>
+          <div><b>Restore paths never tested</b><span>Backups that complete successfully every night and have never once been restored.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <!-- ENGAGEMENTS -->
 <section class="shaded" id="engagements">
   <div class="wrap">
-    <div class="s-head center">
-      <span class="eyebrow">Engagement models</span>
-      <h2>Three ways to work with us</h2>
-      <p class="lead">Start small and prove the value. Most clients begin with an assessment and expand
-        once the roadmap is agreed.</p>
+    <div class="eng-intro">
+      <div>
+        <span class="eyebrow">Engagement models</span>
+        <h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0">Three ways to work with us</h2>
+        <p class="lead" style="margin-top:15px">Start small and prove the value. Most clients begin with a
+          fixed-scope assessment and expand once the roadmap is agreed and the numbers are on the table.</p>
+        <p class="lead" style="margin-top:14px">Every model is written against a defined scope with named
+          deliverables — no open-ended time and materials, and no surprise change notes.</p>
+      </div>
+      <div class="eng-intro-media">
+        <img src="assets/planning.jpg" alt="Consultants and client engineers planning an infrastructure migration around printed network diagrams" loading="lazy" width="1400" height="764">
+      </div>
     </div>
     <div class="eng">
       <article>
@@ -609,6 +683,13 @@
       <span class="eyebrow">Capabilities</span>
       <h2>Platforms we work in every day</h2>
       <p class="lead">Depth from hypervisor and storage through to cloud control planes, identity and the endpoint.</p>
+    </div>
+    <div class="banner">
+      <img src="assets/cabling.jpg" alt="Neatly dressed structured network cabling in an enterprise server rack" loading="lazy" width="1408" height="768">
+      <div class="banner-cap">
+        <b>The unglamorous details are the ones that keep systems up</b>
+        <span>Cable management, naming standards, documented patching — the work that nobody notices until it is missing.</span>
+      </div>
     </div>
     <div class="stack">
       <div><h4>Cloud</h4><ul><li>Amazon Web Services</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li></ul></div>
