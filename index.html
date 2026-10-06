@@ -200,6 +200,25 @@
   .eng-intro-media{border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(10,22,40,.14)}
   .eng-intro-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
 
+  /* client profiles */
+  .prof{display:grid;grid-template-columns:repeat(auto-fit,minmax(218px,1fr));gap:18px}
+  .prof div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 22px;border-top:3px solid var(--blue)}
+  .prof b{display:block;font-size:.975rem;font-weight:680;margin-bottom:7px;letter-spacing:-.012em}
+  .prof span{font-size:.878rem;color:var(--muted);line-height:1.62}
+
+  /* governance grid */
+  .gov-head{margin:68px 0 38px;padding-top:56px;border-top:1px solid var(--line);max-width:720px}
+  .gov-head h3{font-size:clamp(1.35rem,2.4vw,1.72rem);margin:12px 0 0}
+  .gov-head p{margin-top:14px}
+  .gov{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .gov article{background:#fff;padding:29px 27px}
+  .gov .gi{width:38px;height:38px;border-radius:8px;background:var(--blue-pale);display:grid;place-items:center;margin-bottom:16px}
+  .gov .gi svg{width:19px;height:19px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .gov h4{font-size:1rem;margin-bottom:8px}
+  .gov p{font-size:.895rem;color:var(--muted)}
+  .frameworks{margin-top:24px;padding:20px 24px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:.885rem;color:var(--muted)}
+  .frameworks b{color:var(--ink);font-weight:680}
+
   /* capability stack */
   .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:34px}
   .stack h4{font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:750;padding-bottom:12px;border-bottom:2px solid var(--blue);display:inline-block;margin-bottom:17px}
@@ -309,11 +328,11 @@
     <div class="hero-grid">
       <div>
         <span class="tagline">Independent · Vendor-neutral</span>
-        <h1>Infrastructure consulting<br>delivered by <em>practising engineers</em>.</h1>
+        <h1>Enterprise infrastructure<br>consulting, delivered by <em>practising engineers</em>.</h1>
         <p class="sub">
-          We assess, migrate and operate cloud and on-premises infrastructure for organisations that
-          need the work done properly the first time — with documentation, a tested rollback and a
-          team that can run it after we leave.
+          RCW IT Consulting advises on and delivers cloud migration, platform engineering and
+          operational resilience programmes. Every engagement is governed against a defined scope,
+          documented to audit standard, and formally transitioned to your teams on completion.
         </p>
         <div class="hero-cta">
           <a class="btn btn-w" href="#contact">Request an assessment
@@ -321,17 +340,17 @@
           <a class="btn btn-gh" href="#services">View services</a>
         </div>
         <div class="assure">
-          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Fixed-scope pricing</div>
-          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> No licence resale</div>
-          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Documentation included</div>
+          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Fixed-scope commercials</div>
+          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Vendor-independent advice</div>
+          <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Full documentation and handover</div>
         </div>
       </div>
       <aside class="hcard">
         <h3>Practice at a glance</h3>
-        <div class="hrow"><span>Focus</span><b>Cloud · Linux · Virtualisation</b></div>
+        <div class="hrow"><span>Practice areas</span><b>Cloud · Linux · Virtualisation</b></div>
         <div class="hrow"><span>Platforms</span><b>AWS · Azure · GCP · VMware</b></div>
-        <div class="hrow"><span>Engagement</span><b>Assessment · Project · Retainer</b></div>
-        <div class="hrow"><span>Delivery</span><b>Remote-first, IST hours</b></div>
+        <div class="hrow"><span>Engagement models</span><b>Assessment · Project · Retainer</b></div>
+        <div class="hrow"><span>Delivery model</span><b>Remote-first, IST hours</b></div>
         <div class="hrow"><span>Knowledge base</span><b>225+ labs authored</b></div>
       </aside>
     </div>
@@ -340,10 +359,10 @@
 
 <div class="bar">
   <div class="wrap">
-    <div class="cell"><b>Assess</b><span>Dependency-mapped, evidence-based</span></div>
-    <div class="cell"><b>Migrate</b><span>Piloted, phased, reversible</span></div>
-    <div class="cell"><b>Harden</b><span>Baselined and patch-managed</span></div>
-    <div class="cell"><b>Hand over</b><span>Runbooks and enablement</span></div>
+    <div class="cell"><b>Assess</b><span>Evidence-based and dependency-mapped</span></div>
+    <div class="cell"><b>Migrate</b><span>Piloted, phased and reversible</span></div>
+    <div class="cell"><b>Harden</b><span>Baselined, patched and audited</span></div>
+    <div class="cell"><b>Hand over</b><span>Documentation and enablement</span></div>
   </div>
 </div>
 
@@ -352,17 +371,17 @@
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow">Services</span>
-      <h2>Focused engagements across the infrastructure lifecycle</h2>
-      <p class="lead">Each service is scoped to a defined outcome with named deliverables, so you know
-        exactly what lands at the end of the engagement.</p>
+      <h2>Service lines across the infrastructure lifecycle</h2>
+      <p class="lead">Each service line is scoped to a defined outcome with contractually named
+        deliverables, providing a clear basis for budgeting, governance and acceptance.</p>
     </div>
 
     <div class="svc">
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.1 9.4 4.5 4.5 0 0 0 6.5 19z"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg></div>
         <h3>Cloud Migration &amp; Modernisation</h3>
-        <p>Move workloads off ageing on-premises estates on a wave plan with validation gates and a rehearsed rollback — not a weekend big-bang.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Structured migration of production workloads to public or hybrid cloud, sequenced into waves with defined validation gates and a rehearsed rollback position at every stage.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>Workload inventory and dependency map</li>
             <li>Migration wave plan with sequencing</li>
@@ -375,8 +394,8 @@
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
         <h3>Cloud Architecture &amp; Landing Zones</h3>
-        <p>Account structure, network topology and guardrails designed up front, so the platform stays governable as more teams build on it.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Target-state architecture, account topology and policy guardrails established in advance of scale, ensuring the platform remains governable, auditable and cost-controlled as adoption grows.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>Multi-account / subscription design</li>
             <li>Network segmentation and connectivity model</li>
@@ -389,8 +408,8 @@
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 19h20"/><path d="m8 9 2.5 2.5L8 14"/><path d="M12.5 14H16"/></svg></div>
         <h3>Linux &amp; Platform Engineering</h3>
-        <p>Standardised, hardened and automated enterprise Linux — so builds are repeatable and patching stops being a quarterly crisis.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Standardised, hardened and automated enterprise Linux estates, delivering repeatable builds, predictable patch cycles and a documented configuration baseline.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>Golden image and build standard (RHEL / Rocky / Ubuntu)</li>
             <li>CIS-aligned hardening baseline</li>
@@ -403,8 +422,8 @@
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
         <h3>Virtualisation &amp; Digital Workspace</h3>
-        <p>Virtual desktop and endpoint estates sized on real usage data, with an enrolment and application delivery model users don't fight.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Virtual desktop and endpoint estates sized against measured demand, with enrolment, compliance and application delivery models designed to sustain user adoption.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>VDI capacity and host sizing model</li>
             <li>Intune enrolment and compliance policies</li>
@@ -417,8 +436,8 @@
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
         <h3>Storage, Backup &amp; Disaster Recovery</h3>
-        <p>Resilience planning where the restore is actually tested — because an unverified backup is only an expensive assumption.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Data protection and recovery architecture substantiated by evidence, with recovery objectives agreed with the business and demonstrated through scheduled restore testing.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>Capacity and growth projection</li>
             <li>Backup policy, tiering and retention design</li>
@@ -431,8 +450,8 @@
       <article>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
         <h3>Reliability &amp; Incident Response</h3>
-        <p>Get to genuine root cause on production incidents, then close the loop so the same failure cannot recur unnoticed.</p>
-        <div class="dwrap"><div class="deliv-h">Typical deliverables</div>
+        <p>Structured root cause investigation of production incidents, followed by the monitoring, runbooks and escalation model required to prevent recurrence.</p>
+        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
           <ul class="deliv">
             <li>Structured root cause analysis report</li>
             <li>Monitoring and alerting baseline</li>
@@ -452,28 +471,48 @@
   <div class="wrap">
     <div class="band-grid">
       <div>
-        <span class="eyebrow" style="color:#64b2f8">Where migrations go wrong</span>
-        <h2>Migrations rarely fail at cutover. They fail on the dependency nobody mapped.</h2>
-        <p class="bl">The technical move is usually the easy part. What derails projects is everything
-          that was never written down — and that is exactly what the discovery phase is for.</p>
+        <span class="eyebrow" style="color:#64b2f8">Programme risk</span>
+        <h2>Migrations rarely fail at cutover. They fail on the dependency that was never mapped.</h2>
+        <p class="bl">The migration event itself is seldom the risk. Programme failure is more often
+          traced to undocumented conditions within the incumbent estate — precisely what a structured
+          discovery phase exists to surface.</p>
       </div>
       <ul class="band-pts">
         <li>
           <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-          <div><b>Undocumented integrations</b><span>Legacy interfaces discovered mid-cutover, when the rollback window is already closing.</span></div>
+          <div><b>Undocumented integrations</b><span>Legacy interfaces identified during cutover, once the rollback window has already begun to close.</span></div>
         </li>
         <li>
           <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <div><b>Licensing tied to old hardware</b><span>Entitlements and support contracts bound to host IDs that will not exist after the move.</span></div>
+          <div><b>Entitlements bound to legacy hardware</b><span>Licences and support agreements tied to host identifiers that will not persist beyond migration.</span></div>
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg>
-          <div><b>Restore paths never tested</b><span>Backups that complete successfully every night and have never once been restored.</span></div>
+          <div><b>Unverified recovery paths</b><span>Backup jobs reporting success nightly, with no evidence of a completed restore.</span></div>
         </li>
       </ul>
     </div>
   </div>
 </div>
+
+<!-- CLIENT PROFILES -->
+<section id="clients">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Who we work with</span>
+      <h2>Organisations carrying more estate than headcount</h2>
+      <p class="lead">We are engaged most often where the infrastructure has outgrown the team available
+        to maintain it, and where a wrong decision is expensive to reverse.</p>
+    </div>
+    <div class="prof">
+      <div><b>Mid-market IT functions</b><span>Lean internal teams accountable for enterprise-scale estates without enterprise-scale headcount.</span></div>
+      <div><b>Managed service providers</b><span>Specialist capacity for client migrations and escalations that fall outside the core service catalogue.</span></div>
+      <div><b>Education &amp; training institutions</b><span>Campus, lab and teaching infrastructure with seasonal demand peaks and tightly constrained budgets.</span></div>
+      <div><b>Regulated environments</b><span>Estates carrying audit, retention and evidence obligations, where every change must be demonstrable.</span></div>
+      <div><b>Hybrid estates</b><span>Organisations operating on-premises and cloud concurrently, with no intention of fully exiting either.</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ENGAGEMENTS -->
 <section class="shaded" id="engagements">
@@ -481,11 +520,12 @@
     <div class="eng-intro">
       <div>
         <span class="eyebrow">Engagement models</span>
-        <h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0">Three ways to work with us</h2>
-        <p class="lead" style="margin-top:15px">Start small and prove the value. Most clients begin with a
-          fixed-scope assessment and expand once the roadmap is agreed and the numbers are on the table.</p>
-        <p class="lead" style="margin-top:14px">Every model is written against a defined scope with named
-          deliverables — no open-ended time and materials, and no surprise change notes.</p>
+        <h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0">Three engagement models</h2>
+        <p class="lead" style="margin-top:15px">Most clients commence with a fixed-scope assessment and
+          expand once the roadmap, sequencing and indicative costs have been agreed.</p>
+        <p class="lead" style="margin-top:14px">Each model is contracted against a defined scope with named
+          deliverables and written acceptance criteria — no open-ended time and materials, and no
+          unscheduled change notes.</p>
       </div>
       <div class="eng-intro-media">
         <img src="assets/planning.jpg" alt="Consultants and client engineers planning an infrastructure migration around printed network diagrams" loading="lazy" width="1400" height="764">
@@ -495,13 +535,13 @@
       <article>
         <h3>Infrastructure Assessment</h3>
         <div class="dur">Fixed scope · 1–3 weeks</div>
-        <p>An evidence-based review of your current estate with a prioritised, costed remediation roadmap.</p>
+        <p>An evidence-based review of the current estate, concluding in a prioritised and costed remediation roadmap.</p>
         <ul>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Current-state findings report</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Risk register with severity ranking</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Prioritised remediation roadmap</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Indicative effort and cost estimates</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Findings walkthrough with your team</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Formal findings presentation to stakeholders</li>
         </ul>
         <a class="btn btn-o" href="#contact">Scope an assessment</a>
       </article>
@@ -524,17 +564,59 @@
       <article>
         <h3>Retained Advisory</h3>
         <div class="dur">Monthly · ongoing</div>
-        <p>A standing block of senior engineering time for architecture review, escalations and roadmap guidance.</p>
+        <p>A standing allocation of senior engineering time for architecture governance, escalation support and roadmap guidance.</p>
         <ul>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Architecture and design review</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Escalation support for complex faults</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Technology selection guidance</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Quarterly roadmap and risk review</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Mentoring for your internal engineers</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Capability development for internal engineers</li>
         </ul>
-        <a class="btn btn-o" href="#contact">Enquire about retainer</a>
+        <a class="btn btn-o" href="#contact">Enquire about retainers</a>
       </article>
     </div>
+
+    <div class="gov-head">
+      <span class="eyebrow">Governance &amp; assurance</span>
+      <h3>How engagements are controlled</h3>
+      <p class="lead">Commercial clarity is only half the assurance. The following controls apply to every
+        engagement regardless of size, and are agreed in writing before work commences.</p>
+    </div>
+    <div class="gov">
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h4>Defined scope and acceptance</h4>
+        <p>Every engagement is contracted against a written scope, with deliverables and acceptance criteria agreed before work begins.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+        <h4>Reporting cadence</h4>
+        <p>An agreed reporting rhythm with a nominated sponsor, covering progress, risk, dependency status and budget position.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4>Formal change control</h4>
+        <p>Variations are raised, costed and approved in writing before they are actioned. Scope does not drift silently.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
+        <h4>Risk and issue management</h4>
+        <p>A maintained register with named owners, agreed mitigations and escalation thresholds, visible to the client throughout.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Evidence-based quality gates</h4>
+        <p>Milestones close only against evidence — validation output, test results and documented sign-off from the accountable party.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <h4>Scheduled knowledge transfer</h4>
+        <p>Enablement is planned into the delivery schedule rather than deferred to closure, so capability builds during the engagement.</p>
+      </article>
+    </div>
+    <p class="frameworks"><b>Reference frameworks.</b> Our methodology works to established industry
+      standards — CIS Benchmarks for system hardening, the AWS and Azure Well-Architected Frameworks for
+      design review, and ITIL-aligned practice for service transition and handover.</p>
   </div>
 </section>
 
@@ -543,16 +625,16 @@
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow">Methodology</span>
-      <h2>A deliberate, low-drama delivery method</h2>
-      <p class="lead">Every engagement follows the same five phases, so you always know what is changing,
-        when it changes, and how we reverse it if it misbehaves.</p>
+      <h2>A governed, five-phase delivery methodology</h2>
+      <p class="lead">Every engagement follows the same five phases, establishing at each stage what is
+        changing, when it will change, and the agreed position for reversal should validation fail.</p>
     </div>
     <div class="proc">
-      <div class="ph"><span class="n">PHASE 01</span><h4>Discover</h4><p>Inventory the estate, map dependencies and surface the constraints that usually derail projects late.</p></div>
-      <div class="ph"><span class="n">PHASE 02</span><h4>Design</h4><p>A target architecture sized to the actual workload and budget, with trade-offs documented, not hidden.</p></div>
-      <div class="ph"><span class="n">PHASE 03</span><h4>Pilot</h4><p>Prove the design on a representative slice and measure it before anything production-critical moves.</p></div>
-      <div class="ph"><span class="n">PHASE 04</span><h4>Deliver</h4><p>Phased cutover with validation gates, agreed success criteria and a rehearsed rollback at each step.</p></div>
-      <div class="ph"><span class="n">PHASE 05</span><h4>Hand over</h4><p>As-built documentation, runbooks and working sessions so your team can operate it unaided.</p></div>
+      <div class="ph"><span class="n">PHASE 01</span><h4>Discover</h4><p>Inventory the estate, map dependencies and surface the constraints that typically emerge late in poorly scoped programmes.</p></div>
+      <div class="ph"><span class="n">PHASE 02</span><h4>Design</h4><p>A target architecture sized to measured workload and agreed budget, with trade-offs and rejected options formally documented.</p></div>
+      <div class="ph"><span class="n">PHASE 03</span><h4>Pilot</h4><p>Validate the design against a representative workload and measure the result before any business-critical system is moved.</p></div>
+      <div class="ph"><span class="n">PHASE 04</span><h4>Deliver</h4><p>Phased cutover governed by validation gates, agreed acceptance criteria and a rehearsed rollback position at each milestone.</p></div>
+      <div class="ph"><span class="n">PHASE 05</span><h4>Hand over</h4><p>As-built documentation, operational runbooks and structured enablement, transferring full operational ownership to your teams.</p></div>
     </div>
 
     <figure class="diagram">
@@ -659,13 +741,13 @@
           RCW IT Consulting is the consulting practice behind
           <a href="https://www.rcwittraining.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">RCW IT Training</a>,
           an independent platform with 225+ free hands-on labs across Linux, cloud, networking and endpoint
-          management. The engineers who author those labs do the client work.
+          management. The engineers who author that material also lead client delivery.
         </p>
         <ul class="why-list">
-          <li><span class="n">01</span><h4>Practitioner-led</h4><p>You work directly with the engineer doing the implementation — no account-management layer translating the technical detail into something vaguer.</p></li>
-          <li><span class="n">02</span><h4>Genuinely vendor-neutral</h4><p>We hold no resale margins or partner quotas, so nothing steers the design commercially. Sometimes the right recommendation is to keep what you already have.</p></li>
-          <li><span class="n">03</span><h4>Documentation as a deliverable</h4><p>As-built documents, runbooks and enablement sessions are in scope, never an upsell. The objective is that you stop needing us.</p></li>
-          <li><span class="n">04</span><h4>Tested, not theoretical</h4><p>Recommendations come from systems we have deliberately broken and rebuilt in lab conditions before they reach your production estate.</p></li>
+          <li><span class="n">01</span><h4>Practitioner-led</h4><p>Engagements are led by the engineer accountable for delivery. Technical decisions are discussed directly with the people making them, without an intermediary layer.</p></li>
+          <li><span class="n">02</span><h4>Vendor-independent</h4><p>We hold no resale margins, referral arrangements or partner quotas. Nothing steers the recommendation commercially — including, where appropriate, a recommendation to retain your existing platform.</p></li>
+          <li><span class="n">03</span><h4>Documentation as a deliverable</h4><p>As-built documentation, runbooks and enablement are contracted deliverables, not chargeable extras. The objective of every engagement is to remove your dependency on us.</p></li>
+          <li><span class="n">04</span><h4>Evidence-based recommendations</h4><p>Recommendations derive from systems we have deliberately failed and rebuilt under laboratory conditions before they are proposed for a production estate.</p></li>
         </ul>
       </div>
       <div class="split-media">
@@ -681,14 +763,14 @@
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow">Capabilities</span>
-      <h2>Platforms we work in every day</h2>
-      <p class="lead">Depth from hypervisor and storage through to cloud control planes, identity and the endpoint.</p>
+      <h2>Platforms and technologies</h2>
+      <p class="lead">Demonstrated depth from hypervisor and storage through to cloud control planes, identity and the managed endpoint.</p>
     </div>
     <div class="banner">
       <img src="assets/cabling.jpg" alt="Neatly dressed structured network cabling in an enterprise server rack" loading="lazy" width="1408" height="768">
       <div class="banner-cap">
-        <b>The unglamorous details are the ones that keep systems up</b>
-        <span>Cable management, naming standards, documented patching — the work that nobody notices until it is missing.</span>
+        <b>Operational discipline is what keeps platforms available</b>
+        <span>Cable management, naming standards and documented patching — the disciplines that remain invisible until they are absent.</span>
       </div>
     </div>
     <div class="stack">
@@ -707,21 +789,21 @@
   <div class="wrap">
     <div class="s-head center">
       <span class="eyebrow">Common questions</span>
-      <h2>Before you get in touch</h2>
+      <h2>Frequently asked questions</h2>
     </div>
     <div class="faq">
-      <details open><summary>How does a typical engagement start?</summary>
-        <p>With a short, no-obligation call to understand the problem. If it looks like a fit, we propose a fixed-scope assessment with a defined deliverable and price. You are free to take that roadmap and implement it yourself, or with any partner you choose.</p></details>
-      <details><summary>Do you work alongside our existing MSP or internal team?</summary>
-        <p>Routinely. We are often brought in for a specific capability gap — a migration, a hardening programme, a recurring incident nobody has closed out — and work as an extension of the existing team rather than a replacement for it.</p></details>
+      <details open><summary>How does an engagement commence?</summary>
+        <p>With a short, no-obligation consultation to establish the requirement. Where there is a fit, we issue a fixed-scope assessment proposal with defined deliverables and a fixed price. You retain complete freedom to implement the resulting roadmap internally or through any partner you choose.</p></details>
+      <details><summary>Can you work alongside our existing MSP or internal team?</summary>
+        <p>Routinely. We are frequently engaged to address a specific capability gap — a migration, a hardening programme, or a recurring incident that has remained unresolved — operating as an extension of the existing team rather than a replacement for it.</p></details>
       <details><summary>Do you resell licences or hardware?</summary>
-        <p>No. We take no resale margin, referral fee or vendor commission of any kind. Our only revenue is the engineering time you engage us for, which is what keeps the architecture advice honest.</p></details>
-      <details><summary>How is pricing structured?</summary>
-        <p>Assessments are fixed price against a written scope. Projects are milestone-based with agreed acceptance criteria per milestone. Retainers are a monthly block of hours. We do not bill open-ended time and materials without a cap.</p></details>
-      <details><summary>Can you work remotely, and in which time zones?</summary>
-        <p>Delivery is remote-first and we work primarily in IST, with overlap available for EMEA and APAC business hours. Cutover windows and maintenance work are scheduled around your change calendar, including nights and weekends where required.</p></details>
-      <details><summary>What happens at the end of an engagement?</summary>
-        <p>You receive the as-built documentation, runbooks and configuration artefacts, plus a handover session with the people who will operate the platform. There is no dependency on us to keep it running, and no proprietary tooling left behind.</p></details>
+        <p>No. We take no resale margin, referral fee or vendor commission of any kind. Our sole revenue is the engineering time contracted, which is what preserves the independence of the architectural advice.</p></details>
+      <details><summary>How are engagements priced?</summary>
+        <p>Assessments are fixed price against a written scope. Projects are milestone-based, with acceptance criteria agreed per milestone. Retainers are contracted as a monthly allocation of hours. We do not bill open-ended time and materials without an agreed cap.</p></details>
+      <details><summary>What is your delivery model and coverage?</summary>
+        <p>Delivery is remote-first, operating principally in IST with overlap available for EMEA and APAC business hours. Cutover windows and maintenance activity are scheduled around your change calendar, including out-of-hours and weekend execution where required.</p></details>
+      <details><summary>What is provided at engagement closure?</summary>
+        <p>As-built documentation, operational runbooks and configuration artefacts, together with a structured handover to the personnel who will operate the platform. No ongoing dependency on us is created, and no proprietary tooling is left in place.</p></details>
     </div>
   </div>
 </section>
@@ -735,9 +817,9 @@
       <div>
         <span class="eyebrow" style="color:#64b2f8">Get in touch</span>
         <h2 style="margin-top:13px">Have a migration, an outage, or a platform that has outgrown its design?</h2>
-        <p>Describe the situation and we will tell you honestly whether we are the right fit, roughly what
-          it should take, and what we would do first. If it is not a fit, we will say so and point you
-          somewhere better.</p>
+        <p>Outline the requirement and we will respond with a candid assessment of fit, an indicative
+          scope and effort estimate, and a recommended first step. Where we are not the appropriate
+          partner, we will say so.</p>
       </div>
       <div class="cta-act">
         <a class="btn btn-w" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">
@@ -746,7 +828,7 @@
         <!-- TODO: add a direct email CTA here once published, e.g.
              <a class="btn btn-gh" href="mailto:hello@rcwittraining.in">Email the practice</a> -->
         <a class="btn btn-gh" href="https://www.rcwittraining.in/" target="_blank" rel="noopener">Visit RCW IT Training</a>
-        <p class="cta-note">Initial consultation is free and carries no obligation.</p>
+        <p class="cta-note">Initial consultation is provided without charge or obligation.</p>
       </div>
     </div>
   </div>
@@ -763,7 +845,7 @@
           <span><b>RCW IT Consulting</b><span>Cloud &amp; Infrastructure</span></span>
         </a>
         <p>Independent infrastructure consulting — assessments, migrations and platform engineering,
-           delivered by engineers who still build in the lab every week.</p>
+           delivered by engineers who remain hands-on in the lab every week.</p>
       </div>
       <div><h5>Services</h5><ul>
         <li><a href="#services">Cloud migration</a></li>
@@ -776,6 +858,7 @@
         <li><a href="#engagements">Engagement models</a></li>
         <li><a href="#approach">Methodology</a></li>
         <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#clients">Who we work with</a></li>
         <li><a href="#why">Why RCW IT</a></li>
         <li><a href="#faq">FAQ</a></li></ul></div>
       <div><h5>Connect</h5><ul>
