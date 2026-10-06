@@ -37,6 +37,8 @@
   .lead{color:var(--muted);font-size:1.045rem}
   .center{text-align:center}
   section{padding:88px 0}
+  /* offset anchor targets so they clear the sticky header */
+  section[id],div[id]{scroll-margin-top:92px}
   .shaded{background:var(--bg2);border-block:1px solid var(--line)}
   .s-head{max-width:720px;margin-bottom:52px}
   .s-head.center{margin-inline:auto}
@@ -201,7 +203,7 @@
   .eng-intro-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
 
   /* client profiles */
-  .prof{display:grid;grid-template-columns:repeat(auto-fit,minmax(218px,1fr));gap:18px}
+  .prof{display:grid;grid-template-columns:repeat(auto-fit,minmax(318px,1fr));gap:18px}
   .prof div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 22px;border-top:3px solid var(--blue)}
   .prof b{display:block;font-size:.975rem;font-weight:680;margin-bottom:7px;letter-spacing:-.012em}
   .prof span{font-size:.878rem;color:var(--muted);line-height:1.62}
@@ -510,6 +512,7 @@
       <div><b>Education &amp; training institutions</b><span>Campus, lab and teaching infrastructure with seasonal demand peaks and tightly constrained budgets.</span></div>
       <div><b>Regulated environments</b><span>Estates carrying audit, retention and evidence obligations, where every change must be demonstrable.</span></div>
       <div><b>Hybrid estates</b><span>Organisations operating on-premises and cloud concurrently, with no intention of fully exiting either.</span></div>
+      <div><b>Stalled programmes</b><span>Estates part-way through a cloud programme that has lost its original owner or drifted from the agreed design.</span></div>
     </div>
   </div>
 </section>
