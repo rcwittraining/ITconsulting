@@ -45,6 +45,7 @@
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.68;font-size:16.5px;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--blue-l);outline-offset:2px;border-radius:6px}
   h1,h2,h3,h4{letter-spacing:-.021em;line-height:1.22;margin:0;font-weight:700}
   p{margin:0}
   img{max-width:100%;display:block}
@@ -144,6 +145,28 @@
   .pstats .ps span{font-size:.785rem;color:var(--muted)}
   .pcard .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
   .sig{font-size:.82rem;color:var(--muted2);margin-top:14px;font-style:italic}
+
+  /* hero credibility line */
+  .hcred{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:.92rem;color:#a9ccf2;font-weight:600;letter-spacing:.01em}
+  .hcred .dot{width:8px;height:8px;border-radius:50%;background:#4ec07f;box-shadow:0 0 0 4px rgba(78,192,127,.22);flex:0 0 auto}
+
+  /* credentials & proof */
+  .cred{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .cred .ct{background:#fff;padding:30px 26px}
+  .cred .ct .ico{width:38px;height:38px;border-radius:8px;background:var(--blue-pale);display:grid;place-items:center;margin-bottom:14px}
+  .cred .ct .ico svg{width:19px;height:19px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .cred .ct b{display:block;font-size:clamp(1.5rem,2.6vw,1.95rem);font-weight:760;letter-spacing:-.028em;color:var(--ink)}
+  .cred .ct span{display:block;font-size:.85rem;color:var(--muted);margin-top:4px}
+  .cred-band{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-top:24px}
+  .cred-band .av{width:52px;height:52px;border-radius:50%;background:var(--ink);display:grid;place-items:center;color:#fff;font-weight:700;font-size:1rem;flex:0 0 auto;letter-spacing:.02em}
+  .cred-band b{display:block;font-size:1rem;color:var(--ink);font-weight:700}
+  .cred-band span{display:block;font-size:.87rem;color:var(--muted);margin-top:3px}
+  .cred-band .btn{margin-left:auto}
+
+  /* technology chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:600;color:var(--ink2);box-shadow:0 1px 2px rgba(10,22,40,.04)}
+  .chip .dot{width:9px;height:9px;border-radius:50%;background:var(--blue);flex:0 0 auto}
 
   /* services */
   .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(336px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -345,6 +368,7 @@
     <nav class="links" id="menu">
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#credentials">Credentials</a>
       <a href="#engagements">Engagements</a>
       <a href="#approach">Approach</a>
       <a href="#capabilities">Capabilities</a>
@@ -366,6 +390,7 @@
       <div>
         <span class="tagline">Independent · Vendor-neutral</span>
         <h1>Enterprise infrastructure<br>consulting, delivered by <em>practising engineers</em>.</h1>
+        <p class="hcred"><span class="dot"></span>Pradeep Raju · Enterprise Infrastructure Architect · 19+ years in production environments</p>
         <p class="sub">
           RCW IT Consulting advises on and delivers cloud migration, platform engineering and
           operational resilience programmes. Every engagement is governed against a defined scope,
@@ -448,6 +473,45 @@
         </div>
         <p class="sig">A direct message on LinkedIn is the fastest route to discuss a requirement.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS & PROOF -->
+<section id="credentials" class="shaded">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Credentials &amp; proof</span>
+      <h2>Recommendations drawn from systems deliberately built, broken and repaired</h2>
+      <p class="lead">The credibility behind the advice. Every recommendation delivered to a client estate is first
+        exercised in a laboratory environment — and the engineer who writes that material leads your engagement personally.</p>
+    </div>
+    <div class="cred">
+      <div class="ct">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></div>
+        <b>225+</b><span>hands-on labs authored</span>
+      </div>
+      <div class="ct">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <b>430+</b><span>certification practice questions</span>
+      </div>
+      <div class="ct">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 13h8M8 17h5"/></svg></div>
+        <b>55+</b><span>troubleshooting &amp; design guides</span>
+      </div>
+      <div class="ct">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+        <b>14</b><span>RHEL 10 video lessons</span>
+      </div>
+    </div>
+    <div class="cred-band">
+      <div class="av">PR</div>
+      <div>
+        <b>Published independently at RCW IT Training</b>
+        <span>Free, browser-based labs, simulators and troubleshooting notes — the same material referenced in client engagements.</span>
+      </div>
+      <a class="btn btn-p" href="https://www.rcwittraining.in/" target="_blank" rel="noopener">Explore the training platform
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -860,6 +924,20 @@
         <span>Cable management, naming standards and documented patching — the disciplines that remain invisible until they are absent.</span>
       </div>
     </div>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span>Amazon Web Services</span>
+      <span class="chip"><span class="dot"></span>Microsoft Azure</span>
+      <span class="chip"><span class="dot"></span>Google Cloud Platform</span>
+      <span class="chip"><span class="dot"></span>VMware vSphere</span>
+      <span class="chip"><span class="dot"></span>Red Hat Enterprise Linux</span>
+      <span class="chip"><span class="dot"></span>Microsoft Intune</span>
+      <span class="chip"><span class="dot"></span>Entra ID / Active Directory</span>
+      <span class="chip"><span class="dot"></span>Veeam</span>
+      <span class="chip"><span class="dot"></span>Citrix Virtual Apps</span>
+      <span class="chip"><span class="dot"></span>Azure Virtual Desktop</span>
+      <span class="chip"><span class="dot"></span>Ansible</span>
+      <span class="chip"><span class="dot"></span>Terraform</span>
+    </div>
     <div class="stack">
       <div><h4>Cloud</h4><ul><li>Amazon Web Services</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li></ul></div>
       <div><h4>Virtualisation</h4><ul><li>VMware vSphere</li><li>Microsoft Hyper-V</li><li>Azure Virtual Desktop</li><li>Citrix Virtual Apps &amp; Desktops</li><li>Amazon WorkSpaces</li></ul></div>
@@ -948,6 +1026,7 @@
         <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#clients">Who we work with</a></li>
         <li><a href="#why">Why RCW IT</a></li>
+        <li><a href="#credentials">Credentials</a></li>
         <li><a href="#faq">FAQ</a></li></ul></div>
       <div><h5>Connect</h5><ul>
         <li><a href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">LinkedIn</a></li>
