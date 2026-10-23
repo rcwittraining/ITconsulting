@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RCW IT Consulting — Cloud Migration, Linux &amp; Infrastructure Consulting</title>
-<meta name="description" content="Independent IT consulting led by Pradeep Raju, Enterprise Infrastructure Architect (19+ years). Cloud migration, AWS and Azure landing zones, Linux/RHEL platform engineering, virtualisation, backup and disaster recovery, and incident response. Fixed-scope assessments, project delivery and retained advisory.">
-<meta name="theme-color" content="#0a1628">
+<meta name="description" content="Independent infrastructure support by Pradeep Raju, Enterprise Infrastructure Architect (19+ years). Freelance support, contract project delivery and managed service support across cloud migration, AWS/Azure landing zones, Linux/RHEL, virtualisation, backup and disaster recovery.">
+<meta name="theme-color" content="#0F4C81">
 <meta property="og:title" content="RCW IT Consulting — Cloud, Linux &amp; Infrastructure Consulting">
 <meta property="og:description" content="Independent infrastructure consulting by Pradeep Raju, Enterprise Infrastructure Architect (19+ yrs). Assessments, migrations and platform engineering — fixed-scope, documented, handed over.">
 <meta property="og:type" content="website">
@@ -32,12 +32,13 @@
 </script>
 <style>
   :root{
-    --ink:#0a1628; --ink2:#0f2240; --ink3:#16314f;
-    --blue:#1a6fc4; --blue-d:#12528f; --blue-l:#2c8ef0; --blue-pale:#eaf3fc;
-    --txt:#16202e; --muted:#51637c; --muted2:#71839b;
-    --line:#dfe6ef; --line2:#eef2f7;
-    --bg:#fff; --bg2:#f7f9fc;
-    --ok:#1f9254;
+    --ink:#0F4C81; --ink2:#133E66; --ink3:#1E5C94;
+    --blue:#0F4C81; --blue-d:#0A3A66; --blue-l:#2C8EF0; --blue-pale:#E8F1FA;
+    --txt:#16202e; --muted:#5B6B7E; --muted2:#7A879B;
+    --line:#E1E7EF; --line2:#EDF1F7;
+    --bg:#F7F9FC; --bg2:#fff;
+    --shaded:#EEF4FB;
+    --ok:#1F9254;
     --max:1180px;
     --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
@@ -56,17 +57,17 @@
   section{padding:88px 0}
   /* offset anchor targets so they clear the sticky header */
   section[id],div[id]{scroll-margin-top:92px}
-  .shaded{background:var(--bg2);border-block:1px solid var(--line)}
+  .shaded{background:var(--shaded);border-block:1px solid var(--line)}
   .s-head{max-width:720px;margin-bottom:52px}
   .s-head.center{margin-inline:auto}
   .s-head h2{font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0}
   .s-head p{margin-top:15px}
 
   /* utility bar */
-  .util{background:var(--ink);color:#9fb4ce;font-size:.785rem;border-bottom:1px solid rgba(255,255,255,.07)}
+  .util{background:var(--bg2);color:var(--muted);font-size:.785rem;border-bottom:1px solid var(--line)}
   .util .wrap{display:flex;align-items:center;gap:18px;height:38px}
-  .util a{color:#cfe0f3;border-bottom:1px solid rgba(207,224,243,.3)}
-  .util a:hover{color:#fff}
+  .util a{color:var(--blue);border-bottom:1px solid var(--blue-pale)}
+  .util a:hover{color:var(--ink)}
   .util .sep{margin-left:auto}
 
   /* header */
@@ -86,65 +87,59 @@
   .btn-p:hover{background:var(--blue-d);border-color:var(--blue-d)}
   .btn-o{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-o:hover{border-color:var(--muted2);background:var(--bg2)}
-  .btn-w{background:#fff;color:var(--ink);border-color:#fff}
-  .btn-w:hover{background:#e9f1fa}
-  .btn-gh{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.34)}
-  .btn-gh:hover{background:rgba(255,255,255,.16)}
+  .btn-w{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .btn-w:hover{background:var(--blue-d);border-color:var(--blue-d)}
+  .btn-gh{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-gh:hover{border-color:var(--blue);background:var(--blue-pale)}
   .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer;color:var(--ink)}
   .burger svg{width:19px;height:19px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
 
   /* ---------- hero with imagery ---------- */
   .hero{
-    position:relative;color:#fff;padding:96px 0 0;overflow:hidden;background:var(--ink);
+    position:relative;color:var(--txt);padding:96px 0 0;overflow:hidden;
+    background:linear-gradient(135deg,#F7F9FC 0%,#E8F1FA 100%);
   }
   .hero-bg{position:absolute;inset:0;z-index:0}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 50%}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 50%;opacity:.42}
   .hero-veil{
     position:absolute;inset:0;z-index:1;
-    background:linear-gradient(97deg,#0a1628 0%,rgba(10,22,40,.965) 25%,rgba(11,25,45,.85) 43%,rgba(13,31,56,.52) 66%,rgba(16,38,66,.24) 100%);
+    background:linear-gradient(97deg,rgba(247,249,252,.97) 0%,rgba(247,249,252,.88) 30%,rgba(232,241,250,.72) 55%,rgba(44,142,240,.18) 100%);
   }
-  .hero-veil2{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,transparent 22%,transparent 72%,rgba(10,22,40,.92) 100%)}
+  .hero-veil2{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(247,249,252,.4) 0%,transparent 22%,transparent 72%,rgba(247,249,252,.92) 100%)}
   .hero .wrap{position:relative;z-index:2}
   .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-bottom:92px}
-  .tagline{display:inline-flex;align-items:center;gap:9px;font-size:.755rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase;color:#a9ccf2;background:rgba(44,142,240,.15);border:1px solid rgba(44,142,240,.34);padding:7px 15px;border-radius:5px}
-  .hero h1{font-size:clamp(2.05rem,4.4vw,3.2rem);margin:26px 0 0;font-weight:760;letter-spacing:-.031em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
-  .hero h1 em{font-style:normal;color:#64b2f8}
-  .hero p.sub{font-size:clamp(1rem,1.5vw,1.125rem);color:#c0d2e7;margin-top:22px;max-width:570px}
+  .tagline{display:inline-flex;align-items:center;gap:9px;font-size:.755rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-pale);border:1px solid var(--blue-pale);padding:7px 15px;border-radius:5px}
+  .hero h1{font-size:clamp(2.05rem,4.4vw,3.2rem);margin:26px 0 0;font-weight:760;letter-spacing:-.031em;color:var(--txt)}
+  .hero h1 em{font-style:normal;color:var(--blue)}
+  .hero p.sub{font-size:clamp(1rem,1.5vw,1.125rem);color:var(--muted);margin-top:22px;max-width:570px}
   .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:36px}
-  .assure{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;font-size:.855rem;color:#a7bdd8}
+  .assure{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;font-size:.855rem;color:var(--muted)}
   .assure div{display:flex;align-items:center;gap:8px}
-  .assure svg{width:16px;height:16px;stroke:#4ec07f;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-  .hcard{background:rgba(9,20,38,.70);border:1px solid rgba(255,255,255,.17);border-radius:14px;padding:30px;backdrop-filter:blur(14px);box-shadow:0 22px 60px rgba(0,0,0,.4)}
-  .hcard h3{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#8fb3d8;font-weight:650;margin-bottom:19px}
-  .hrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem}
+  .assure svg{width:16px;height:16px;stroke:var(--ok);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .hcard{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:14px;padding:30px;backdrop-filter:blur(14px);box-shadow:0 22px 60px rgba(15,76,129,.10)}
+  .hcard h3{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:650;margin-bottom:19px}
+  .hrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line2);font-size:.9rem}
   .hrow:first-of-type{border-top:none;padding-top:0}
-  .hrow span{color:#9db4cf}
-  .hrow b{color:#fff;font-weight:600;text-align:right}
+  .hrow span{color:var(--muted)}
+  .hrow b{color:var(--txt);font-weight:600;text-align:right}
 
   /* stat bar */
-  .bar{background:var(--ink3);position:relative;z-index:3}
-  .bar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border-inline:1px solid rgba(255,255,255,.1)}
-  .bar .cell{background:var(--ink3);padding:26px 24px}
-  .bar b{display:block;font-size:1.42rem;color:#fff;font-weight:740;letter-spacing:-.022em}
-  .bar span{font-size:.8rem;color:#9fb6d2}
+  .bar{background:var(--bg2);position:relative;z-index:3;border-block:1px solid var(--line)}
+  .bar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-inline:1px solid var(--line)}
+  .bar .cell{background:var(--bg2);padding:26px 24px}
+  .bar b{display:block;font-size:1.42rem;color:var(--blue);font-weight:740;letter-spacing:-.022em}
+  .bar span{font-size:.8rem;color:var(--muted)}
 
-  /* ---------- about the consultant ---------- */
-  .about{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:center}
-  .phcard{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 26px 60px rgba(10,22,40,.18);background:var(--bg2)}
-  .phcard img{width:100%;height:auto;display:block}
-  .phcard .badge{position:absolute;left:18px;bottom:18px;background:rgba(10,22,40,.86);color:#fff;border-radius:9px;padding:11px 15px;font-size:.78rem;font-weight:600;backdrop-filter:blur(6px);display:flex;align-items:center;gap:9px}
-  .phcard .badge b{color:#7fb8f5;font-size:.95rem}
-  .pcard .eyebrow{display:inline-block}
-  .pcard h2.nm{font-size:clamp(1.6rem,2.6vw,2.15rem);margin-top:12px;font-weight:760;letter-spacing:-.028em;color:var(--ink)}
-  .pcard .role{color:var(--blue);font-weight:650;margin-top:7px;font-size:1.01rem}
-  .pcard .bio{color:var(--muted);margin-top:15px;font-size:.985rem}
-  .pstats{display:flex;flex-wrap:wrap;gap:14px;margin-top:25px}
-  .pstats .ps{flex:1 1 158px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:15px 17px}
-  .pstats .ps b{display:block;font-size:1.2rem;color:var(--ink);font-weight:750;letter-spacing:-.02em}
-  .pstats .ps span{font-size:.785rem;color:var(--muted)}
-  .pcard .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-  .sig{font-size:.82rem;color:var(--muted2);margin-top:14px;font-style:italic}
+  /* ---------- about the consultant (compact, bottom) ---------- */
+  .about-sm{display:flex;align-items:center;gap:30px;flex-wrap:wrap;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:0 18px 44px rgba(15,76,129,.08)}
+  .phcard-sm{width:128px;height:160px;border-radius:12px;overflow:hidden;flex:0 0 auto;box-shadow:0 14px 34px rgba(15,76,129,.14);background:var(--shaded)}
+  .phcard-sm img{width:100%;height:100%;object-fit:cover;display:block}
+  .pcard-sm .eyebrow{display:inline-block}
+  .pcard-sm h2.nm{font-size:1.45rem;margin-top:8px;font-weight:760;letter-spacing:-.025em;color:var(--ink)}
+  .pcard-sm .role{color:var(--blue);font-weight:650;margin-top:4px;font-size:.92rem}
+  .pcard-sm .bio{color:var(--muted);margin-top:11px;font-size:.915rem;max-width:640px}
+  .pcard-sm .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 
   /* hero credibility line */
   .hcred{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:.92rem;color:#a9ccf2;font-weight:600;letter-spacing:.01em}
@@ -165,8 +160,16 @@
 
   /* technology chips */
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
-  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:600;color:var(--ink2);box-shadow:0 1px 2px rgba(10,22,40,.04)}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:600;color:var(--ink2);box-shadow:0 1px 2px rgba(15,76,129,.06)}
   .chip .dot{width:9px;height:9px;border-radius:50%;background:var(--blue);flex:0 0 auto}
+
+  /* core expertise */
+  .exp{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .exp-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px 26px;border-top:3px solid var(--blue)}
+  .exp-card .ico{width:40px;height:40px;border-radius:8px;background:var(--blue-pale);display:grid;place-items:center;margin-bottom:16px}
+  .exp-card .ico svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+  .exp-card h3{font-size:1.05rem;margin-bottom:8px}
+  .exp-card p{font-size:.885rem;color:var(--muted);line-height:1.6}
 
   /* services */
   .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(336px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -210,14 +213,14 @@
 
   /* split media block */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .split-media{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 48px rgba(10,22,40,.13)}
+  .split-media{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 48px rgba(15,76,129,.13)}
   .split-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
   .badge{
-    position:absolute;left:22px;bottom:22px;background:rgba(10,22,40,.93);backdrop-filter:blur(8px);
+    position:absolute;left:22px;bottom:22px;background:rgba(15,76,129,.93);backdrop-filter:blur(8px);
     color:#fff;border-radius:10px;padding:16px 20px;border:1px solid rgba(255,255,255,.14);max-width:255px
   }
   .badge b{display:block;font-size:1.5rem;font-weight:750;letter-spacing:-.025em;line-height:1.1}
-  .badge span{font-size:.79rem;color:#a7bdd8}
+  .badge span{font-size:.79rem;color:#5B6B7E}
   .why-list{list-style:none;padding:0;margin:30px 0 0}
   .why-list li{position:relative;padding-left:46px;margin-bottom:26px}
   .why-list li:last-child{margin-bottom:0}
@@ -226,36 +229,36 @@
   .why-list p{font-size:.92rem;color:var(--muted)}
 
   /* full-width image band */
-  .band{position:relative;color:#fff;padding:86px 0;overflow:hidden;background:var(--ink);border-block:1px solid rgba(255,255,255,.08)}
+  .band{position:relative;color:var(--txt);padding:86px 0;overflow:hidden;background:linear-gradient(135deg,#F7F9FC 0%,#E8F1FA 100%);border-block:1px solid var(--line)}
   .band-bg{position:absolute;inset:0;z-index:0}
-  .band-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
-  .band-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(98deg,rgba(8,18,34,.95) 0%,rgba(8,18,34,.86) 32%,rgba(9,22,42,.56) 60%,rgba(10,26,48,.30) 100%)}
+  .band-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.32}
+  .band-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(98deg,rgba(247,249,252,.95) 0%,rgba(247,249,252,.85) 32%,rgba(232,241,250,.7) 60%,rgba(44,142,240,.15) 100%)}
   .band .wrap{position:relative;z-index:2}
   .band-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:58px;align-items:center}
-  .band h2{font-size:clamp(1.5rem,2.8vw,2.05rem);margin:13px 0 0;max-width:560px}
-  .band > .wrap p.bl{color:#bdcfe4;margin-top:16px;max-width:520px;font-size:1.01rem}
+  .band h2{font-size:clamp(1.5rem,2.8vw,2.05rem);margin:13px 0 0;max-width:560px;color:var(--txt)}
+  .band > .wrap p.bl{color:var(--muted);margin-top:16px;max-width:520px;font-size:1.01rem}
   .band-pts{list-style:none;padding:0;margin:0;display:grid;gap:13px}
   .band-pts li{
-    display:flex;gap:14px;align-items:flex-start;background:rgba(8,18,34,.62);
-    border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:17px 19px;backdrop-filter:blur(9px)
+    display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.85);
+    border:1px solid var(--line);border-radius:10px;padding:17px 19px;backdrop-filter:blur(9px)
   }
-  .band-pts svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;stroke:#64b2f8;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-  .band-pts b{display:block;font-size:.945rem;font-weight:650;color:#fff;margin-bottom:3px}
-  .band-pts span{font-size:.865rem;color:#a7bdd8;line-height:1.55}
+  .band-pts svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;stroke:var(--blue);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .band-pts b{display:block;font-size:.945rem;font-weight:650;color:var(--txt);margin-bottom:3px}
+  .band-pts span{font-size:.865rem;color:var(--muted);line-height:1.55}
 
   /* section banner image */
-  .banner{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);margin-bottom:48px;box-shadow:0 16px 40px rgba(10,22,40,.12)}
+  .banner{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);margin-bottom:48px;box-shadow:0 16px 40px rgba(15,76,129,.12)}
   .banner img{width:100%;height:100%;object-fit:cover;aspect-ratio:40/9;display:block}
   .banner-cap{
     position:absolute;left:0;right:0;bottom:0;padding:34px 32px 26px;
-    background:linear-gradient(0deg,rgba(8,18,34,.93) 0%,rgba(8,18,34,.62) 55%,transparent 100%);color:#fff
+    background:linear-gradient(0deg,rgba(15,76,129,.93) 0%,rgba(15,76,129,.62) 55%,transparent 100%);color:#fff
   }
   .banner-cap b{display:block;font-size:1.06rem;font-weight:680;letter-spacing:-.015em}
   .banner-cap span{font-size:.875rem;color:#b4c8de}
 
   /* engagements intro split */
   .eng-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;margin-bottom:50px}
-  .eng-intro-media{border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(10,22,40,.14)}
+  .eng-intro-media{border-radius:13px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(15,76,129,.14)}
   .eng-intro-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
 
   /* client profiles */
@@ -293,47 +296,47 @@
   details p{padding:0 48px 23px 0;color:var(--muted);font-size:.945rem;margin-top:-4px}
 
   /* CTA with imagery */
-  .cta{position:relative;color:#fff;padding:92px 0;overflow:hidden;background:var(--ink)}
+  .cta{position:relative;color:var(--txt);padding:92px 0;overflow:hidden;background:linear-gradient(135deg,#F7F9FC 0%,#E8F1FA 100%)}
   .cta-bg{position:absolute;inset:0;z-index:0}
-  .cta-bg img{width:100%;height:100%;object-fit:cover}
-  .cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.84) 34%,rgba(12,30,55,.56) 62%,rgba(14,36,66,.34) 100%)}
+  .cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.3}
+  .cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(247,249,252,.96) 0%,rgba(247,249,252,.88) 34%,rgba(232,241,250,.72) 62%,rgba(44,142,240,.15) 100%)}
   .cta .wrap{position:relative;z-index:2}
   .cta-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
-  .cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
-  .cta p{color:#bdcfe4;margin-top:17px;font-size:1.03rem}
+  .cta h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--txt)}
+  .cta p{color:var(--muted);margin-top:17px;font-size:1.03rem}
   .cta-act{display:flex;flex-direction:column;gap:12px}
-  .cta-note{font-size:.825rem;color:#95adc8;margin-top:5px}
+  .cta-note{font-size:.825rem;color:var(--muted2);margin-top:5px}
 
   /* footer */
-  footer{background:var(--ink);color:#9fb4ce;padding:62px 0 32px;font-size:.89rem;border-top:1px solid rgba(255,255,255,.1)}
-  .f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:42px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .f-grid h5{color:#fff;font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 17px;font-weight:700}
+  footer{background:var(--bg);color:var(--muted);padding:62px 0 32px;font-size:.89rem;border-top:1px solid var(--line)}
+  .f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:42px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .f-grid h5{color:var(--ink);font-size:.745rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 17px;font-weight:700}
   .f-grid ul{list-style:none;padding:0;margin:0}
   .f-grid li{margin-bottom:11px}
-  .f-grid a{color:#9fb4ce;transition:color .16s}
-  .f-grid a:hover{color:#fff}
-  .f-brand p{margin-top:15px;max-width:330px;color:#8da4c0;font-size:.875rem}
-  .f-brand .brand b{color:#fff}
-  .f-brand .brand span{color:#7e97b5}
-  .f-brand .logo{background:rgba(255,255,255,.1)}
-  .f-bot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:26px;font-size:.835rem;color:#7e97b5}
-  .f-dis{margin-top:20px;font-size:.78rem;color:#67809c;line-height:1.6;max-width:900px}
+  .f-grid a{color:var(--muted);transition:color .16s}
+  .f-grid a:hover{color:var(--ink)}
+  .f-brand p{margin-top:15px;max-width:330px;color:var(--muted);font-size:.875rem}
+  .f-brand .brand b{color:var(--ink)}
+  .f-brand .brand span{color:var(--muted2)}
+  .f-brand .logo{background:var(--blue-pale)}
+  .f-bot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:26px;font-size:.835rem;color:var(--muted2)}
+  .f-dis{margin-top:20px;font-size:.78rem;color:var(--muted2);line-height:1.6;max-width:900px}
 
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;gap:44px;padding-bottom:68px}
-    .hero-veil{background:linear-gradient(170deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.9) 55%,rgba(13,31,56,.86) 100%)}
+    .hero-veil{background:linear-gradient(170deg,rgba(247,249,252,.97) 0%,rgba(247,249,252,.92) 55%,rgba(232,241,250,.86) 100%)}
     .cta-grid,.split,.band-grid,.eng-intro{grid-template-columns:1fr;gap:38px}
-    .about{grid-template-columns:1fr;gap:40px}
+    .about-sm{flex-direction:column;align-items:flex-start;gap:20px}
     .split-media{order:-1}
-    .band-veil{background:linear-gradient(170deg,rgba(8,18,34,.93) 0%,rgba(8,18,34,.86) 60%,rgba(10,26,48,.80) 100%)}
-    .cta-veil{background:linear-gradient(170deg,rgba(10,22,40,.94) 0%,rgba(10,22,40,.88) 60%,rgba(14,36,66,.82) 100%)}
+    .band-veil{background:linear-gradient(170deg,rgba(247,249,252,.95) 0%,rgba(247,249,252,.88) 60%,rgba(232,241,250,.80) 100%)}
+    .cta-veil{background:linear-gradient(170deg,rgba(247,249,252,.96) 0%,rgba(247,249,252,.9) 60%,rgba(232,241,250,.82) 100%)}
     .banner img{aspect-ratio:21/9}
     .bar .wrap{grid-template-columns:repeat(2,1fr)}
     .f-grid{grid-template-columns:1fr 1fr;gap:34px}
   }
   @media (max-width:860px){
     .util .wrap{height:auto;padding-block:9px;font-size:.73rem;gap:12px}
-    nav.links{display:none;position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px 28px 20px;box-shadow:0 14px 30px rgba(10,22,40,.1)}
+    nav.links{display:none;position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px 28px 20px;box-shadow:0 14px 30px rgba(15,76,129,.1)}
     nav.links.open{display:flex}
     nav.links a{padding:14px 0;border-bottom:1px solid var(--line2)}
     nav.links .btn{margin-top:15px;border-bottom:none}
@@ -366,13 +369,13 @@
       <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="links" id="menu">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
+      <a href="#services">Support</a>
+      <a href="#expertise">Expertise</a>
       <a href="#credentials">Credentials</a>
-      <a href="#engagements">Engagements</a>
       <a href="#approach">Approach</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
       <a class="btn btn-p" href="#contact">Get in touch</a>
     </nav>
   </div>
@@ -392,9 +395,10 @@
         <h1>Enterprise infrastructure<br>consulting, delivered by <em>practising engineers</em>.</h1>
         <p class="hcred"><span class="dot"></span>Pradeep Raju · Enterprise Infrastructure Architect · 19+ years in production environments</p>
         <p class="sub">
-          RCW IT Consulting advises on and delivers cloud migration, platform engineering and
-          operational resilience programmes. Every engagement is governed against a defined scope,
-          documented to audit standard, and formally transitioned to your teams on completion.
+          RCW IT Consulting provides freelance, contract and managed service support for enterprise
+          infrastructure — cloud migration, cross-platform virtualisation, M&amp;A integration,
+          solutioning and DevOps. Engaged by scope, delivered by the architect, documented to
+          hand-over standard.
         </p>
         <div class="hero-cta">
           <a class="btn btn-w" href="#contact">Request an assessment
@@ -421,61 +425,12 @@
 
 <div class="bar">
   <div class="wrap">
-    <div class="cell"><b>Assess</b><span>Evidence-based and dependency-mapped</span></div>
-    <div class="cell"><b>Migrate</b><span>Piloted, phased and reversible</span></div>
-    <div class="cell"><b>Harden</b><span>Baselined, patched and audited</span></div>
-    <div class="cell"><b>Hand over</b><span>Documentation and enablement</span></div>
+    <div class="cell"><b>Freelance</b><span>On-demand senior support</span></div>
+    <div class="cell"><b>Contract</b><span>Fixed-scope project delivery</span></div>
+    <div class="cell"><b>Managed</b><span>Ongoing operations support</span></div>
+    <div class="cell"><b>Handover</b><span>Documented &amp; independent</span></div>
   </div>
 </div>
-
-<!-- ABOUT THE CONSULTANT -->
-<section id="about">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">The consultant</span>
-      <h2>Engagements delivered by the architect — not handed off</h2>
-      <p class="lead">RCW IT Consulting is the independent practice of <strong>Pradeep Raju</strong>, an
-        enterprise infrastructure architect with <strong>19+ years</strong> in production environments
-        across VMware, Linux, cloud and identity platforms.</p>
-    </div>
-    <div class="about">
-      <div class="phcard">
-        <img src="assets/pradeep-raju.jpg" alt="Pradeep Raju, Enterprise Infrastructure Architect" width="360" height="475" loading="lazy">
-        <div class="badge">
-          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:#7fb8f5;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round"><path d="M20 6 9 17l-5-5"/></svg>
-          <span><b>19+ yrs</b>in production environments</span>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="eyebrow">Profile</span>
-        <h2 class="nm">Pradeep Raju</h2>
-        <p class="role">Enterprise Infrastructure Architect · Chennai, India</p>
-        <p class="bio">
-          I design and operate infrastructure for large organisations — VMware and Linux estates,
-          Active Directory and Entra ID, Microsoft Intune device management, backup and storage
-          platforms, and workloads on AWS, Azure and GCP. Over 19+ years in production environments
-          I have led migration programmes, hardened platforms against production incidents, and
-          written the runbooks that follow. Every engagement is delivered by me directly and
-          documented to hand-over standard — you work with the architect, not a delegated junior.
-        </p>
-        <div class="pstats">
-          <div class="ps"><b>19+ yrs</b><span>production engineering &amp; architecture</span></div>
-          <div class="ps"><b>225+</b><span>hands-on labs authored</span></div>
-          <div class="ps"><b>14</b><span>RHEL 10 video lessons</span></div>
-        </div>
-        <div class="links">
-          <a class="btn btn-p" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.5c0-1.31-.02-3-1.9-3-1.9 0-2.2 1.43-2.2 2.9V21H9z"/></svg>
-            Connect on LinkedIn</a>
-          <a class="btn btn-o" href="https://www.youtube.com/@RajuRishiDev" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
-            Watch on YouTube</a>
-        </div>
-        <p class="sig">A direct message on LinkedIn is the fastest route to discuss a requirement.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CREDENTIALS & PROOF -->
 <section id="credentials" class="shaded">
@@ -516,100 +471,157 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SUPPORT SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="s-head">
-      <span class="eyebrow">Services</span>
-      <h2>Service lines across the infrastructure lifecycle</h2>
-      <p class="lead">Each service line is scoped to a defined outcome with contractually named
-        deliverables, providing a clear basis for budgeting, governance and acceptance.</p>
+      <span class="eyebrow">Support services</span>
+      <h2>Three ways to engage — from a single task to fully managed</h2>
+      <p class="lead">Choose the level of support that matches your requirement: ad-hoc freelance
+        engineering, a contracted project with defined scope, or an ongoing managed service. Every
+        engagement is delivered by the architect and governed to the same standard.</p>
+    </div>
+    <div class="eng">
+      <article>
+        <span class="flag">On-demand</span>
+        <h3>Freelance Support</h3>
+        <div class="dur">Pay-as-you-go · No commitment</div>
+        <p>Senior engineering support engaged for specific tasks, incidents or short-term needs — without a retainer or long-term obligation. You draw on expertise exactly when the requirement arises.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> On-call senior engineer for defined tasks</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Incident response and resolution</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Task-based billing (hourly / daily)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> No retainer or minimum commitment</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Fast ramp — typically within 24–48 hours</li>
+        </ul>
+        <a class="btn btn-o" href="#contact">Request freelance support</a>
+      </article>
+
+      <article class="feat">
+        <span class="flag">Most common</span>
+        <h3>Contract Support</h3>
+        <div class="dur">Fixed scope · Milestone-based</div>
+        <p>Contracted delivery of a defined outcome — a migration, a platform build or a remediation programme — governed by a signed agreement with clear scope, milestones and deliverables.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Signed contract with defined scope and acceptance criteria</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Milestone-based delivery with validation gates</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Detailed design and build</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Tested rollback at every milestone</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> As-built documentation and formal handover</li>
+        </ul>
+        <a class="btn btn-p" href="#contact">Discuss a contract</a>
+      </article>
+
+      <article>
+        <span class="flag">Ongoing</span>
+        <h3>Managed Service Support</h3>
+        <div class="dur">Monthly retainer · Ongoing</div>
+        <p>Continuous, predictable operational support for your infrastructure — monitoring, maintenance and management delivered under an ongoing retainer, so your platforms stay available and governed.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Standing allocation of senior engineering time</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Monitoring, alerting and proactive maintenance</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Patching, hardening and lifecycle management</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Escalation support for complex faults</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Quarterly roadmap and risk reviews</li>
+        </ul>
+        <a class="btn btn-o" href="#contact">Enquire about managed support</a>
+      </article>
     </div>
 
-    <div class="svc">
+    <div class="gov-head">
+      <span class="eyebrow">Governance &amp; assurance</span>
+      <h3>How every engagement is controlled</h3>
+      <p class="lead">Commercial clarity is only half the assurance. The following controls apply to every
+        engagement regardless of size, and are agreed in writing before work commences.</p>
+    </div>
+    <div class="gov">
       <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h4>Defined scope and acceptance</h4>
+        <p>Every engagement is contracted against a written scope, with deliverables and acceptance criteria agreed before work begins.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+        <h4>Reporting cadence</h4>
+        <p>An agreed reporting rhythm with a nominated sponsor, covering progress, risk, dependency status and budget position.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4>Formal change control</h4>
+        <p>Variations are raised, costed and approved in writing before they are actioned. Scope does not drift silently.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
+        <h4>Risk and issue management</h4>
+        <p>A maintained register with named owners, agreed mitigations and escalation thresholds, visible to the client throughout.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Evidence-based quality gates</h4>
+        <p>Milestones close only against evidence — validation output, test results and documented sign-off from the accountable party.</p>
+      </article>
+      <article>
+        <div class="gi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <h4>Scheduled knowledge transfer</h4>
+        <p>Enablement is planned into the delivery schedule rather than deferred to closure, so capability builds during the engagement.</p>
+      </article>
+    </div>
+    <p class="frameworks"><b>Reference frameworks.</b> Our methodology works to established industry
+      standards — CIS Benchmarks for system hardening, the AWS and Azure Well-Architected Frameworks for
+      design review, and ITIL-aligned practice for service transition and handover.</p>
+  </div>
+</section>
+
+<!-- CORE EXPERTISE -->
+<section id="expertise" class="shaded">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Core expertise</span>
+      <h2>Specialised engagement areas</h2>
+      <p class="lead">Beyond day-to-day support, the practice is engaged for specific programme-level
+        outcomes where infrastructure experience and architectural judgement intersect.</p>
+    </div>
+    <div class="exp">
+      <div class="exp-card">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.1 9.4 4.5 4.5 0 0 0 6.5 19z"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg></div>
-        <h3>Cloud Migration &amp; Modernisation</h3>
-        <p>Structured migration of production workloads to public or hybrid cloud, sequenced into waves with defined validation gates and a rehearsed rollback position at every stage.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>Workload inventory and dependency map</li>
-            <li>Migration wave plan with sequencing</li>
-            <li>Pilot migration and validation report</li>
-            <li>Cutover runbook including rollback steps</li>
-            <li>Post-migration cost and performance review</li>
-          </ul></div>
-      </article>
-
-      <article>
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
-        <h3>Cloud Architecture &amp; Landing Zones</h3>
-        <p>Target-state architecture, account topology and policy guardrails established in advance of scale, ensuring the platform remains governable, auditable and cost-controlled as adoption grows.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>Multi-account / subscription design</li>
-            <li>Network segmentation and connectivity model</li>
-            <li>Identity, access and permission boundaries</li>
-            <li>Tagging, budget alerts and cost guardrails</li>
-            <li>Architecture decision records</li>
-          </ul></div>
-      </article>
-
-      <article>
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 19h20"/><path d="m8 9 2.5 2.5L8 14"/><path d="M12.5 14H16"/></svg></div>
-        <h3>Linux &amp; Platform Engineering</h3>
-        <p>Standardised, hardened and automated enterprise Linux estates, delivering repeatable builds, predictable patch cycles and a documented configuration baseline.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>Golden image and build standard (RHEL / Rocky / Ubuntu)</li>
-            <li>CIS-aligned hardening baseline</li>
-            <li>Patch and lifecycle management strategy</li>
-            <li>Ansible configuration management</li>
-            <li>Operational documentation set</li>
-          </ul></div>
-      </article>
-
-      <article>
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-        <h3>Virtualisation &amp; Digital Workspace</h3>
-        <p>Virtual desktop and endpoint estates sized against measured demand, with enrolment, compliance and application delivery models designed to sustain user adoption.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>VDI capacity and host sizing model</li>
-            <li>Intune enrolment and compliance policies</li>
-            <li>Application packaging and delivery strategy</li>
-            <li>Profile and FSLogix container design</li>
-            <li>Pilot ring definition and rollout plan</li>
-          </ul></div>
-      </article>
-
-      <article>
-        <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
-        <h3>Storage, Backup &amp; Disaster Recovery</h3>
-        <p>Data protection and recovery architecture substantiated by evidence, with recovery objectives agreed with the business and demonstrated through scheduled restore testing.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>Capacity and growth projection</li>
-            <li>Backup policy, tiering and retention design</li>
-            <li>DR runbook with agreed RTO / RPO targets</li>
-            <li>Restore test schedule and evidence pack</li>
-            <li>Ransomware resilience and immutability review</li>
-          </ul></div>
-      </article>
-
-      <article>
+        <h3>Cloud Migration</h3>
+        <p>Workload migration to AWS, Azure and GCP with landing zone design, pilot-led sequencing and tested rollback at every milestone.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+        <h3>Cross Virtualisation Platform Migration</h3>
+        <p>Replatforming estates between VMware vSphere, Microsoft Hyper-V and Azure Virtual Desktop — licence re-use, network redesign and tested cutover.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Merger &amp; Acquisition Integration</h3>
+        <p>IT consolidation following organisational change — rationalising estates, domains, identities and runbooks across acquired entities.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Solutioning &amp; Architecture</h3>
+        <p>Target-state architecture, landing zone design and technology selection grounded in measured workload, compliance obligations and budget.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h3>Infrastructure as Code</h3>
+        <p>Ansible and Terraform implementations that make the estate reproducible, reviewable and recoverable — configuration managed, not remembered.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
+        <h3>DevOps &amp; CI/CD</h3>
+        <p>Pipeline-driven change with automated validation, environment parity and release governance built into the delivery flow.</p>
+      </div>
+      <div class="exp-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <h3>FinOps &amp; Cost Management</h3>
+        <p>Cloud cost visibility, tagging policy, budget guardrails and waste elimination — cost as an architectural constraint, not an afterthought.</p>
+      </div>
+      <div class="exp-card">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
-        <h3>Reliability &amp; Incident Response</h3>
-        <p>Structured root cause investigation of production incidents, followed by the monitoring, runbooks and escalation model required to prevent recurrence.</p>
-        <div class="dwrap"><div class="deliv-h">Representative deliverables</div>
-          <ul class="deliv">
-            <li>Structured root cause analysis report</li>
-            <li>Monitoring and alerting baseline</li>
-            <li>Runbook library for common failures</li>
-            <li>On-call and escalation model</li>
-            <li>Post-incident review process</li>
-          </ul></div>
-      </article>
+        <h3>Site Reliability Engineering</h3>
+        <p>Monitoring, alerting, SLI/SLO definition and incident response — operational excellence engineered rather than improvised.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -621,7 +633,7 @@
   <div class="wrap">
     <div class="band-grid">
       <div>
-        <span class="eyebrow" style="color:#64b2f8">Programme risk</span>
+        <span class="eyebrow" style="color:var(--blue)">Programme risk</span>
         <h2>Migrations rarely fail at cutover. They fail on the dependency that was never mapped.</h2>
         <p class="bl">The migration event itself is seldom the risk. Programme failure is more often
           traced to undocumented conditions within the incumbent estate — precisely what a structured
@@ -662,112 +674,6 @@
       <div><b>Hybrid estates</b><span>Organisations operating on-premises and cloud concurrently, with no intention of fully exiting either.</span></div>
       <div><b>Stalled programmes</b><span>Estates part-way through a cloud programme that has lost its original owner or drifted from the agreed design.</span></div>
     </div>
-  </div>
-</section>
-
-<!-- ENGAGEMENTS -->
-<section class="shaded" id="engagements">
-  <div class="wrap">
-    <div class="eng-intro">
-      <div>
-        <span class="eyebrow">Engagement models</span>
-        <h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem);margin:13px 0 0">Three engagement models</h2>
-        <p class="lead" style="margin-top:15px">Most clients commence with a fixed-scope assessment and
-          expand once the roadmap, sequencing and indicative costs have been agreed.</p>
-        <p class="lead" style="margin-top:14px">Each model is contracted against a defined scope with named
-          deliverables and written acceptance criteria — no open-ended time and materials, and no
-          unscheduled change notes.</p>
-      </div>
-      <div class="eng-intro-media">
-        <img src="assets/planning.jpg" alt="Consultants and client engineers planning an infrastructure migration around printed network diagrams" loading="lazy" width="1400" height="764">
-      </div>
-    </div>
-    <div class="eng">
-      <article>
-        <h3>Infrastructure Assessment</h3>
-        <div class="dur">Fixed scope · 1–3 weeks</div>
-        <p>An evidence-based review of the current estate, concluding in a prioritised and costed remediation roadmap.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Current-state findings report</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Risk register with severity ranking</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Prioritised remediation roadmap</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Indicative effort and cost estimates</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Formal findings presentation to stakeholders</li>
-        </ul>
-        <a class="btn btn-o" href="#contact">Scope an assessment</a>
-      </article>
-
-      <article class="feat">
-        <span class="flag">Most common</span>
-        <h3>Project Delivery</h3>
-        <div class="dur">Milestone-based · 1–6 months</div>
-        <p>End-to-end delivery of a defined outcome — a migration, a platform build or a modernisation programme.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Detailed design and build</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Pilot, validation and phased cutover</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Tested rollback at every milestone</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> As-built documentation and runbooks</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Formal handover and team enablement</li>
-        </ul>
-        <a class="btn btn-p" href="#contact">Discuss a project</a>
-      </article>
-
-      <article>
-        <h3>Retained Advisory</h3>
-        <div class="dur">Monthly · ongoing</div>
-        <p>A standing allocation of senior engineering time for architecture governance, escalation support and roadmap guidance.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Architecture and design review</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Escalation support for complex faults</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Technology selection guidance</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Quarterly roadmap and risk review</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Capability development for internal engineers</li>
-        </ul>
-        <a class="btn btn-o" href="#contact">Enquire about retainers</a>
-      </article>
-    </div>
-
-    <div class="gov-head">
-      <span class="eyebrow">Governance &amp; assurance</span>
-      <h3>How engagements are controlled</h3>
-      <p class="lead">Commercial clarity is only half the assurance. The following controls apply to every
-        engagement regardless of size, and are agreed in writing before work commences.</p>
-    </div>
-    <div class="gov">
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
-        <h4>Defined scope and acceptance</h4>
-        <p>Every engagement is contracted against a written scope, with deliverables and acceptance criteria agreed before work begins.</p>
-      </article>
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
-        <h4>Reporting cadence</h4>
-        <p>An agreed reporting rhythm with a nominated sponsor, covering progress, risk, dependency status and budget position.</p>
-      </article>
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><path d="M12 8v4l3 2"/></svg></div>
-        <h4>Formal change control</h4>
-        <p>Variations are raised, costed and approved in writing before they are actioned. Scope does not drift silently.</p>
-      </article>
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
-        <h4>Risk and issue management</h4>
-        <p>A maintained register with named owners, agreed mitigations and escalation thresholds, visible to the client throughout.</p>
-      </article>
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h4>Evidence-based quality gates</h4>
-        <p>Milestones close only against evidence — validation output, test results and documented sign-off from the accountable party.</p>
-      </article>
-      <article>
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
-        <h4>Scheduled knowledge transfer</h4>
-        <p>Enablement is planned into the delivery schedule rather than deferred to closure, so capability builds during the engagement.</p>
-      </article>
-    </div>
-    <p class="frameworks"><b>Reference frameworks.</b> Our methodology works to established industry
-      standards — CIS Benchmarks for system hardening, the AWS and Azure Well-Architected Frameworks for
-      design review, and ITIL-aligned practice for service transition and handover.</p>
   </div>
 </section>
 
@@ -915,7 +821,7 @@
     <div class="s-head">
       <span class="eyebrow">Capabilities</span>
       <h2>Platforms and technologies</h2>
-      <p class="lead">Demonstrated depth from hypervisor and storage through to cloud control planes, identity and the managed endpoint.</p>
+      <p class="lead">Demonstrated depth across VMware, Hyper-V and cloud — from hypervisor, storage and backup through to Active Directory, identity and the managed endpoint, with Infrastructure as Code and DevOps practice throughout.</p>
     </div>
     <div class="banner">
       <img src="assets/cabling.jpg" alt="Neatly dressed structured network cabling in an enterprise server rack" loading="lazy" width="1408" height="768">
@@ -925,26 +831,26 @@
       </div>
     </div>
     <div class="chips">
-      <span class="chip"><span class="dot"></span>Amazon Web Services</span>
+      <span class="chip"><span class="dot"></span>AWS Cloud</span>
       <span class="chip"><span class="dot"></span>Microsoft Azure</span>
-      <span class="chip"><span class="dot"></span>Google Cloud Platform</span>
       <span class="chip"><span class="dot"></span>VMware vSphere</span>
-      <span class="chip"><span class="dot"></span>Red Hat Enterprise Linux</span>
+      <span class="chip"><span class="dot"></span>Citrix Virtual Apps &amp; Desktops</span>
+      <span class="chip"><span class="dot"></span>Active Directory</span>
+      <span class="chip"><span class="dot"></span>Backup &amp; Recovery</span>
+      <span class="chip"><span class="dot"></span>Storage &amp; SAN</span>
       <span class="chip"><span class="dot"></span>Microsoft Intune</span>
-      <span class="chip"><span class="dot"></span>Entra ID / Active Directory</span>
-      <span class="chip"><span class="dot"></span>Veeam</span>
-      <span class="chip"><span class="dot"></span>Citrix Virtual Apps</span>
-      <span class="chip"><span class="dot"></span>Azure Virtual Desktop</span>
-      <span class="chip"><span class="dot"></span>Ansible</span>
-      <span class="chip"><span class="dot"></span>Terraform</span>
+      <span class="chip"><span class="dot"></span>Red Hat Enterprise Linux</span>
+      <span class="chip"><span class="dot"></span>Ansible (IaC)</span>
+      <span class="chip"><span class="dot"></span>Terraform (IaC)</span>
+      <span class="chip"><span class="dot"></span>Docker &amp; Kubernetes</span>
     </div>
     <div class="stack">
-      <div><h4>Cloud</h4><ul><li>Amazon Web Services</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li></ul></div>
-      <div><h4>Virtualisation</h4><ul><li>VMware vSphere</li><li>Microsoft Hyper-V</li><li>Azure Virtual Desktop</li><li>Citrix Virtual Apps &amp; Desktops</li><li>Amazon WorkSpaces</li></ul></div>
-      <div><h4>Operating systems</h4><ul><li>Red Hat Enterprise Linux 9 / 10</li><li>Rocky Linux &amp; AlmaLinux</li><li>Ubuntu Server LTS</li><li>Windows Server</li><li>Shell &amp; systemd engineering</li></ul></div>
-      <div><h4>Endpoint &amp; identity</h4><ul><li>Microsoft Intune</li><li>Entra ID / Active Directory</li><li>Conditional Access</li><li>Autopilot provisioning</li><li>Application packaging</li></ul></div>
-      <div><h4>Data protection</h4><ul><li>Veeam Backup &amp; Replication</li><li>TrueNAS Scale</li><li>Snapshot &amp; replication design</li><li>Immutable backup targets</li><li>DR orchestration &amp; testing</li></ul></div>
-      <div><h4>Automation &amp; networking</h4><ul><li>Ansible</li><li>Terraform</li><li>Docker &amp; containers</li><li>Cisco routing &amp; switching</li><li>On-premises LLM operations</li></ul></div>
+      <div><h4>Cloud</h4><ul><li>Amazon Web Services (AWS Cloud)</li><li>Microsoft Azure</li><li>Google Cloud Platform</li><li>Control Tower &amp; landing zones</li><li>CloudWatch, EventBridge, SNS</li><li>FinOps &amp; cost guardrails</li></ul></div>
+      <div><h4>Virtualisation</h4><ul><li>VMware vSphere</li><li>Microsoft Hyper-V</li><li>Citrix Virtual Apps &amp; Desktops</li><li>Azure Virtual Desktop</li><li>Amazon WorkSpaces</li></ul></div>
+      <div><h4>Active Directory &amp; Identity</h4><ul><li>Active Directory</li><li>Entra ID</li><li>Microsoft Intune</li><li>Conditional Access</li><li>Autopilot provisioning</li><li>Application packaging</li></ul></div>
+      <div><h4>Backup, Storage &amp; DR</h4><ul><li>Veeam Backup &amp; Replication</li><li>TrueNAS Scale</li><li>SAN &amp; NAS storage</li><li>Snapshot &amp; replication design</li><li>Immutable backup targets</li><li>DR orchestration &amp; testing</li></ul></div>
+      <div><h4>Operating Systems</h4><ul><li>Red Hat Enterprise Linux 9 / 10</li><li>Rocky Linux &amp; AlmaLinux</li><li>Ubuntu Server LTS</li><li>Windows Server</li><li>Shell &amp; systemd engineering</li></ul></div>
+      <div><h4>Automation &amp; DevOps</h4><ul><li>Ansible (IaC)</li><li>Terraform (IaC)</li><li>Docker &amp; containers</li><li>Kubernetes</li><li>CI/CD pipelines</li><li>Cisco routing &amp; switching</li></ul></div>
     </div>
   </div>
 </section>
@@ -973,6 +879,31 @@
   </div>
 </section>
 
+<!-- ABOUT THE CONSULTANT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-sm">
+      <div class="phcard-sm">
+        <img src="assets/pradeep-raju.jpg" alt="Pradeep Raju, Enterprise Infrastructure Architect" width="128" height="160" loading="lazy">
+      </div>
+      <div class="pcard-sm">
+        <span class="eyebrow">The consultant</span>
+        <h2 class="nm">Pradeep Raju</h2>
+        <p class="role">Enterprise Infrastructure Architect · Chennai, India · 19+ years</p>
+        <p class="bio">Independent infrastructure engineer delivering freelance, contract and managed
+          service support across VMware, Linux, cloud and identity platforms. Every engagement is
+          delivered personally and documented to hand-over standard — you work with the architect,
+          not a delegated junior.</p>
+        <div class="links">
+          <a class="btn btn-p" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.5c0-1.31-.02-3-1.9-3-1.9 0-2.2 1.43-2.2 2.9V21H9z"/></svg>
+            Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <div class="cta" id="contact">
   <div class="cta-bg"><img src="assets/datacenter.jpg" alt="" aria-hidden="true" loading="lazy" width="1408" height="768"></div>
@@ -980,12 +911,12 @@
   <div class="wrap">
     <div class="cta-grid">
       <div>
-        <span class="eyebrow" style="color:#64b2f8">Get in touch</span>
+        <span class="eyebrow" style="color:var(--blue)">Get in touch</span>
         <h2 style="margin-top:13px">Have a migration, an outage, or a platform that has outgrown its design?</h2>
         <p>Outline the requirement and we will respond with a candid assessment of fit, an indicative
-          scope and effort estimate, and a recommended first step. Engagements are delivered by
-          Pradeep Raju directly — not delegated to junior consultants. Where we are not the
-          appropriate partner, we will say so.</p>
+          scope and effort estimate, and a recommended first step — whether that is freelance support,
+          a contracted project or an ongoing managed service. Engagements are delivered by Pradeep
+          Raju directly. Where we are not the appropriate partner, we will say so.</p>
       </div>
       <div class="cta-act">
         <a class="btn btn-w" href="https://www.linkedin.com/in/pradeepmcp826/" target="_blank" rel="noopener">
@@ -1013,15 +944,12 @@
         <p>Independent infrastructure consulting — assessments, migrations and platform engineering,
            delivered by engineers who remain hands-on in the lab every week.</p>
       </div>
-      <div><h5>Services</h5><ul>
-        <li><a href="#services">Cloud migration</a></li>
-        <li><a href="#services">Architecture &amp; landing zones</a></li>
-        <li><a href="#services">Linux engineering</a></li>
-        <li><a href="#services">Virtualisation &amp; workspace</a></li>
-        <li><a href="#services">Backup &amp; disaster recovery</a></li>
-        <li><a href="#services">Incident response</a></li></ul></div>
+      <div><h5>Support</h5><ul>
+        <li><a href="#services">Freelance support</a></li>
+        <li><a href="#services">Contract support</a></li>
+        <li><a href="#services">Managed service support</a></li></ul></div>
       <div><h5>Practice</h5><ul>
-        <li><a href="#engagements">Engagement models</a></li>
+        <li><a href="#expertise">Core expertise</a></li>
         <li><a href="#approach">Methodology</a></li>
         <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#clients">Who we work with</a></li>
